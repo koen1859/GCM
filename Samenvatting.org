@@ -1,0 +1,39 @@
+#+TITLE: GCM Samenvatting
+#+AUTHOR: Koen Stevens, S5302137
+#+DATE: \today
+#+LANGUAGE: en
+#+OPTIONS: toc:nil num:t
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper,11pt]
+#+LATEX_HEADER: \usepackage[utf8]{inputenc}
+#+LATEX_HEADER: \usepackage{mathtools,amsthm,amssymb,amsmath}
+#+LATEX_HEADER: \usepackage{booktabs}
+#+LATEX_HEADER: \usepackage{dcolumn}
+#+LATEX_HEADER: \usepackage{bm}
+#+LATEX_HEADER: \usepackage{graphicx}
+#+LATEX_HEADER: \usepackage{subfig}
+#+LATEX_HEADER: \usepackage{tabularx}
+#+LATEX_HEADER: \usepackage{longtable}
+#+LATEX_HEADER: \usepackage{marvosym}
+#+LATEX_HEADER: \usepackage{eurosym}
+#+LATEX_HEADER: \usepackage{hyperref}
+
+* Preliminaries
+** Nash Equilibrium
+Each player is choosing the best possible strategy given the strategies chosen by the other players.
+\begin{align}
+	s^*_i\in \text{arg}\underset{s_i}{\max}U_i(s^*_1,\cdots,s^*_i,\cdots,s_n^*),\forall i=1,\cdots n.
+\end{align}
+There is $\in$ instead of $=$ since this Nash Equilibrium does not need to be unique.
+** Reaction functions
+A reaction function (or best reply or best response function) gives the best action for a player
+given the actions of the other players. The Nash Equilibrium is where all reaction functions intersect.
+** Symmetry
+When the game is symmetric, i.e. all players are in the same conditions, have the same reaction function
+etcetera, then the players are anonymous (They are indistinguishable from each other except for
+name or index). Then all players choose the same strategy $s^*$ in the Nash Equilibrium.
+** Subgame perfect equilibrium
+When players do not move simultaneously, i.e. the players move sequentially, we need to refine
+definition of Nash Equilibrium: the subgame perfect equilibrium requires that the strategy profile
+under consideration is not only the equilibrium for the entire game but also for each subgame.
+**
