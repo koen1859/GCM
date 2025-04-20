@@ -17,23 +17,127 @@
 #+LATEX_HEADER: \usepackage{marvosym}
 #+LATEX_HEADER: \usepackage{eurosym}
 #+LATEX_HEADER: \usepackage{hyperref}
-
 * Preliminaries
-** Nash Equilibrium
+** Game Theory
+*** Nash Equilibrium
 Each player is choosing the best possible strategy given the strategies chosen by the other players.
 \begin{align}
 	s^*_i\in \text{arg}\underset{s_i}{\max}U_i(s^*_1,\cdots,s^*_i,\cdots,s_n^*),\forall i=1,\cdots n.
 \end{align}
 There is $\in$ instead of $=$ since this Nash Equilibrium does not need to be unique.
-** Reaction functions
+*** Reaction functions
 A reaction function (or best reply or best response function) gives the best action for a player
-given the actions of the other players. The Nash Equilibrium is where all reaction functions intersect.
-** Symmetry
+g*iven the actions of the other players. The Nash Equilibrium is where all reaction functions intersect.
+*** Symmetry
 When the game is symmetric, i.e. all players are in the same conditions, have the same reaction function
 etcetera, then the players are anonymous (They are indistinguishable from each other except for
 name or index). Then all players choose the same strategy $s^*$ in the Nash Equilibrium.
-** Subgame perfect equilibrium
+*** Subgame perfect equilibrium
 When players do not move simultaneously, i.e. the players move sequentially, we need to refine
 definition of Nash Equilibrium: the subgame perfect equilibrium requires that the strategy profile
 under consideration is not only the equilibrium for the entire game but also for each subgame.
 **
+*** Moves of nature
+Many models in IO involve uncertainty. This is often modeled as a “move of nature” in a
+multistage game. The moment at which the uncertainty is resolved, is referred to as the
+move of nature. Such games can again be solved using backward induction
+*** Candidate equilibrium
+For ease of exposition, we will often use the concept of a candidate equilibrium. In many
+models, it is possible to make an educated guess as to what the equilibrium might be. We
+will refer to such an educated guess as a candidate equilibrium. A candidate equilibrium thus is a
+strategy profile that may be a (subgame perfect) Nash equilibrium, but for
+which we still have to check whether that really is the case. This approach for finding
+an equilibrium is often easier than deriving an equilibrium from scratch. Note however
+that if it turns out that the candidate equilibrium is a true equilibrium, we still have not
+established whether that equilibrium is unique.
+*** Mixed strategies
+Players are not restricted to always play some action $a_i^*$ in equilibrium. A mixed strategy
+equilibrium has each player drawing its action from some probability distribution $F_i(a_i)$,
+defined on some domain $A_i$. Given the strategies played by all other players, each player $i$
+is indifferent between the actions among which it mixes. Hence, $\mathbb{E}[U_i(a_i)]$ is constant
+for all $a_i\in A_i$.
+** Models with differentiated products
+*** Hotelling competition
+With horizontal product differentiation different consumers prefer different products. With
+vertical product differentiation all consumers agree which product is preferable.
+
+In Hotelling, consumers are normally distributed on line of unit length, the number of consumer
+is normalized to 1. Consumers either buy 1 unit of good, or none. Each consumer obtains gross
+utility $v$ from consuming the product. There are 2 firms, one located at 0, one located at 1.
+Consumer located at $x$ needs to travel distance $x$ to buy from firm 0 and $1-x$ distance to
+buy from firm 1. Transportation costs are $t$ per unit of distance. Marginal costs for both firms
+are constant and equal to $c$. From this information it can be concluded that in equilibrium both
+firms charge the same price since the game is symmetric.
+
+Suppose firm $i$ charges price $P_i$. Then a consumer located at $x$ buys from firm 0 iff
+#+BEGIN_EXPORT latex
+\begin{align}
+	v-P_0-tx>v-P_1-t(1-x)
+\end{align}
+#+END_EXPORT
+provided that $v-P_0-tx>0$. Assume entire market is covered: in equilibrium prices are s.t.
+everyone consumes. This implies that $v>2t$
+
+Define a consumer $z$ that is indifferent between buying from 0 or 1. Every consumer located at
+$x<z$ buys from 0, every consumer $x>z$ buys from 1. This consumer $z$ is located at
+#+BEGIN_EXPORT latex
+\begin{align}
+	P_0+tz=P_1+t(1-z) \Longleftrightarrow z=\frac{1}{2}+\frac{P_1-P_0}{2t}
+\end{align}
+#+END_EXPORT
+Total sales for firm 0 equal $z$ and for firm 1 $1-z$. When they charge the same price
+$z=\frac{1}{2}$. Profits for firm 0 are:
+
+#+BEGIN_EXPORT latex
+\begin{align}
+	\Pi_0 = (P_0-c)z=(P_0-c)\left(\frac{1}{2}\frac{P_1-P_0}{2t}\right)
+\end{align}
+#+END_EXPORT
+Then we maximize wrt $P_0$ to get reaction function:
+#+BEGIN_EXPORT latex
+\begin{align}
+	P_0=R_0(P_1)=\frac{1}{2}(c+t+P_1)
+\end{align}
+#+END_EXPORT
+And by symmetry:
+#+BEGIN_EXPORT latex
+\begin{align}
+	P_1=R_1(P_0)=\frac{1}{2}(c+t+P_0)
+\end{align}
+#+END_EXPORT
+Thus, in equilibrium (by equation the two reaction functions):
+#+BEGIN_EXPORT latex
+\begin{align}
+	P_0^*=P_1^*=c+t \\
+	\Pi_0=\Pi_1=\frac{1}{2}t
+\end{align}
+#+END_EXPORT
+*** The circular city: Salop
+*** Perloff and Salop
+** Exercises
+#+BEGIN_EXPORT latex
+\begin{enumerate}
+	\item Consider the following Cournot model. Two firms set quantities. Demand is given by
+	      $q=1-p$. Marginal costs are either equal to 0 or 0.4, both with equal probability.
+	      Derive the Cournot equilibrium if
+	      \begin{enumerate}
+		      \item uncertainty is resolved before firms set their quantities.
+		      \item uncertainty is resolved after firms set their quantities.
+	      \end{enumerate}
+
+	      Solution:
+	\item Consider a Hotelling model. Consumers are uniformly distributed on a line of unit
+	      length. Consumers either buy one unit of the good or none at all. Each consumer
+	      obtains gross utility v from consuming the product. We have two firms: one is
+	      located at 0, the other is located at 1. Marginal costs for both firms are constant
+	      and equal to $c$. However, transportation costs are constant: a consumer that has
+	      to travel a distance $x$ incurs transport costs $tx^2$. Derive the equilibrium prices.
+
+	      Solution:
+	\item Consider the Perloff-Salop model where consumers have a valuation that is uni-
+	      formly distributed on $[0, 1]$. For simplicity, $c = 0$. Assume however that $v = 0$ such
+	      that not all consumers buy in equilibrium. Derive the equilibrium prices.
+
+	      Solution:
+\end{enumerate}
+#+END_EXPORT
