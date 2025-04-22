@@ -30,7 +30,7 @@
 \newcommand{\Norm}[1]{\mathrm{Norm}(#1)}
 \newcommand{\Pois}[1]{\mathrm{Pois}(#1)}
 \newcommand{\Unif}[1]{\mathrm{Unif}(#1)}
-\newcommand{\E}[1]{\,\mathsf{E}\left[#1\right]}
+\newcommand{\E}[1]{\,\mathbb{E}\left[#1\right]}
 \newcommand{\EE}[2]{\,\mathsf{E}_{#1}\left[#2\right]}
 \newcommand{\V}[1]{\,\mathsf{V}\left[#1\right]}
 \newcommand{\cov}[1]{\,\mathsf{Cov}\left[#1\right]}
@@ -42,7 +42,7 @@
   \kern.2pt$\SavedStyle#1$\cr$\SavedStyle#1$}}}}
 \renewcommand{\ln}[1]{\,\mathrm{ln}\left[#1\right]}
 \newcommand*{\B}[1]{\ifmmode\bm{#1}\else\textbf{#1}\fi}
-\title{GCM Summary and Solutions to exercises}
+\title{GCM summary and solutions to exercises}
 \author{Koen Stevens}
 \date{\today}
 \begin{document}
@@ -84,7 +84,7 @@ established whether that equilibrium is unique.
 Players are not restricted to always play some action $a_i^*$ in equilibrium. A mixed strategy
 equilibrium has each player drawing its action from some probability distribution $F_i(a_i)$,
 defined on some domain $A_i$. Given the strategies played by all other players, each player $i$
-is indifferent between the actions among which it mixes. Hence, $\mathbb{E}[U_i(a_i)]$ is constant
+is indifferent between the actions among which it mixes. Hence, $\E{U_i(a_i)}$ is constant
 for all $a_i\in A_i$.
 \subsection{Models with differentiated products}
 \subsubsection{Hotelling competition}
@@ -181,12 +181,12 @@ There are three natural extensions that would make the model more realistic: the
 introduction of a location choice, the possibility that firms do not enter simultaneously,
 and the possibility that a firm locates at several points in the product space.
 \subsubsection{Perloff and Salop}
-Suppose there are two firms, $A$ and $B$, and a unit mass of customers. Consumer $j$ has a
+Suppose there are two firms, $A$ and $B$, and a unit mass of consumers. Consumer $j$ has a
 willingness to pay for the product of firm $i\in\{A,B\}$ that is given by $v+\epsilon_{ij}$,
 where $\epsilon_{ij}$ is the realization of a r.v. with cumulative distribution function $F$ on
 some interval $[0,\Bar{\epsilon}]$, and continuously differentiable density $f$. Assume $v$ is
-high enough that all customers buy in equilibrium. All draws are independent from each other,
-$\epsilon_{ij}$ can be interpreted as the match value between product $i$ and customer $j$.
+high enough that all consumers buy in equilibrium. All draws are independent from each other,
+$\epsilon_{ij}$ can be interpreted as the match value between product $i$ and consumer $j$.
 Assume all firms have constant marginal cost equal to $c$.
 
 Firstly, suppose both firms charge same price $p^*$. This will happen in equilibrium since the
@@ -274,11 +274,11 @@ Perloff-Salop model can easily be generalized to more than 2 firms.
 			            \Longrightarrow p                      & =\frac{3}{5}  \\
 			            \text{ with profits } \pi_i=\pi        & =\frac{3}{25}
 		            \end{align*}
-		      \item The expected marginal cost is $\mathbb{E}[c]=0.2$. The firms maximize
+		      \item The expected marginal cost is $\E{c}=0.2$. The firms maximize
 		            expected profit:
 		            \begin{align*}
-			            \pi_i                                             & =(1-q_1-q_2)q_i-\mathbb{E}[c]q_i \\
-			            \Longrightarrow\frac{\partial\pi_i}{\partial q_i} & =(1-\mathbb{E}[c])-q_j-2q_i      \\
+			            \pi_i                                             & =(1-q_1-q_2)q_i-\E{c}q_i \\
+			            \Longrightarrow\frac{\partial\pi_i}{\partial q_i} & =(1-\E{c})-q_j-2q_i      \\
 			            \overset{\text{FOC}}{\Longrightarrow}q_i          & =\frac{0.8-q_j}{2}
 		            \end{align*}
 		            By symmetry:
@@ -340,4 +340,223 @@ Perloff-Salop model can easily be generalized to more than 2 firms.
 	      \end{align*}
 \end{enumerate}
 \section{Consumer search}
+\subsection{The standard Bertrand Model}
+Consider two firms that produce identical goods. There are no frictions, i.e
+the consumers buy from the firm that sets the lowest price. If they set
+the same price they both get half the market share. Assume firms can
+fulfill any demand they face. The demand function is $q=D(p)$, marginal
+costs constant equal $c$. Monopoly profits assumed to be strictly concave,
+bounded and the monopoly price is given by:
+\begin{align}
+	p_m=\underset{p}{\argmax}(p-c)D(p)
+\end{align}
+Demand for firm $i$ is written \(D_i(p_i,p_j)\):
+\begin{align}
+	D_i(p_i,p_j) =
+	\begin{cases}
+		D(p_i)            & \text{if }p_i<p_j \\
+		\frac{1}{2}D(p_i) & \text{if }p_i=p_j \\
+		0                 & \text{if }p_i>p_j
+	\end{cases}
+\end{align}
+The profits of firm $i$ are then:
+\begin{align}
+	\Pi_i(p_i,p_j)=(p_i-c)D_i(p_i,p_j)
+\end{align}
+This profit function is discontinuous.
+
+First consider the case when \(p_j>p_m\). In such a case the best
+reply of firm \(i\) is to set \(p_i=p_m\). Then it attracts all consumers,
+while charging the monopoly price.
+
+Now suppose \(c<p_j\leq p_m\). Firm \(i\) has three choices. Charging
+price \(p_i>p_j\) it has zero profits. Charging price \(p_i=p_j\),
+its sales are \(\frac{1}{2}D(p_j)\). Given the concavity of the profit
+function and the fact that \(p_j<p_m\), the best response of \(i\) is to
+set the price slightly below \(p_j\), say \(p_i=p_j-\epsilon\), with
+\(\epsilon\) arbitrarily small.
+
+Consider the case when \(p_j<c\). Undercutting now yields negative profits.
+Hence, the best reply is to set any price \(p_i>p)j\) with zero profit.
+
+Finally, consider the case in which \(p_j=c\). Undercutting again leads
+to negative profits. Both \(p_i=p_j\) and \(p_i>p_j\) yield 0 profits.
+Therefore the best reply is to set any \(p_i\geq c\).
+
+Summarizing:
+\begin{align}
+	R_i(p_j)=
+	\begin{cases}
+		\in(p_j,\infty) & \text{if }p_j<c         \\
+		\in[c,\infty)   & \text{if }p_j=c         \\
+		p_j-\epsilon    & \text{if }c<p_j\leq p_m \\
+		p_m             & \text{if }p_j>p_m
+	\end{cases}
+\end{align}
+From this we conclude there is unique Nash equilibrium where both firms
+charge price \(c\), with zero profit for both firms.
+
+This result is known as the \textit{Bertrand paradox}. It qualifies as a paradox
+since it is hard to believe that two firms is already enough to restore
+competitive outcome in a market. When only two firms are active in a
+market, one would expect them to make positive profits.
+\subsection{A model of sales}
+Consider a duopoly that competes in prices. Assume there is a mass of
+consumers that equals 1, where each consumer is willing to pay at most
+1 for the product. Each consumer demands only one unit of product:
+\begin{align}
+	D(p)=
+	\begin{cases}
+		1 & \text{if }p\leq1 \\
+		0 & \text{if }p>1
+	\end{cases}
+\end{align}
+Assume 0 marginal costs, and that there are two types of consumers:
+A fraction of \(\lambda\) consumers is informed, which implies they can
+observe the prices of both firms. The remaining fraction of \(1-\lambda\)
+is uninformed: they pick at random which firm to go to and buy the
+product if the price does not exceed 1.
+
+The expected profits for firm \(i\) are given by:
+\begin{align}
+	\Pi_i(p_i,p_j)=
+	\begin{cases}
+		0                                                & \text{if }p_i>1         \\
+		\frac{1}{2}(1-\lambda)p_i                        & \text{if }1\geq p_i>p_j \\
+		\frac{1}{2}p_i                                   & \text{if }p_i=p_j\leq1  \\
+		\left[\lambda+ \frac{1}{2}(1-\lambda) \right]p_i & \text{if }p_i<p_j\leq1
+	\end{cases}
+\end{align}
+provided \(p_i\leq1\).
+
+We can derive the best-response functions. First, note that whenever
+firm \(i\) would want to charge a higher price than \(j\), the best
+option is to charge a price of 1, since it faces the same demand as any
+other price in \((p_j,1]\), and maximizes its profits if it sets its
+price at 1. This implies the following. Suppose \(p_j>0\). The best choice
+for firm \(i\) is to either slightly undercut \(p_j\) which yields profits
+\(\left[\lambda + \frac{1}{2}(1-\lambda) \right]p_j\) or to set \(p_i=1\),
+yields profits \(\frac{1-\lambda}{2}\). Firm \(i\) strictly prefers the
+first strategy when:
+\begin{align}
+	\lambda p_j+\frac{1}{2}(1-\lambda) & >\frac{1}{2}(1-\lambda)      \\
+	\Longleftrightarrow p_j            & >\frac{1-\lambda}{1+\lambda}
+\end{align}
+This yields the reaction functions:
+\begin{align}
+	R_i(p_j)=
+	\begin{cases}
+		1            & \text{if }p_j\leq\frac{1-\lambda}{1+\lambda} \\
+		p_j-\epsilon & \text{if }p_j>\frac{1-\lambda}{1+\lambda}
+	\end{cases}
+\end{align}
+There is no Nash equilibrium in pure strategies. Suppose firm 1 sets
+\(p_1=1\). Firm 2 will slightly undercut. But now, firm 1 wants to
+undercut firm 2 again. This process continues until
+\(p=\frac{1-\lambda}{1+\lambda}\). Then no firm has incentive to
+undercut the other, but each firm does have an incentive to defect by
+setting its price equal 1, where the whole process starts anew.
+
+There is however, an equilibrium in mixed strategies. Suppose both firms
+draw their price from some continuous distribution function \(F(p)\)
+on the support \(\left[\underline{p},\overline{p}\right]\). For this too
+be an equilibrium, we need that given that firm \(j\) uses the mixed
+strategy, any \(p_i\in\left[\underline{p},\overline{p}\right]\) must
+yield the same expected profit for firm \(i\).
+
+Note that the profits that firms make in the mixed strategy equilibrium
+can not be lower than \(\frac{1-\lambda}{2}\), then a firm could just set
+price 1 and have more profits. This implies we can not have \(\overline{p}>1\).
+Consider the possibility that \(\overline{p}<1\). A firm charging price
+\(\overline{p}\) is certain that it is charging the highest price on the
+market. Then it can do better by charging price 1 instead. Hence we must
+have \(\overline{p}=1\).
+
+A firm charging \(\overline{p}=1\) makes profit \(\frac{1-\lambda}{2}\),
+this implies that any \(p\in\left[\underline{p},\overline{p}\right]\)
+must yield those same profits. Consider a firm charging \(\underline{p}\).
+With certainty, this firm charges the lowest price. Its profits then
+equal \(\left[\lambda+ \frac{1}{2}(1-\lambda) \right]\underline{p}\).
+This has to equal \(\frac{1-\lambda}{2}\), we thus have that
+\(\underline{p}=\frac{1-\lambda}{1+\lambda}\).
+
+If firm \(i\) charges price \(p\), the probability that firm \(j\) charges
+a lower price if \(F(p)\). When setting some
+\(p_i\in\left[\underline{p},\overline{p}\right]\), expected profits are:
+\begin{align}
+	\E{\pi_i(p)} & =F(p)\left(\frac{1}{2}(1-\lambda)\right)p+
+	(1-F(p))\left(\lambda+\frac{1}{2}(1-\lambda)\right)p      \\
+	             & =\frac{1}{2}(1-\lambda)p+(1-F(p))\lambda p
+\end{align}
+We thus need:
+\begin{align}
+	\frac{1}{2}(1-\lambda)p+(1-F(p))\lambda p=\frac{1-\lambda}{2}, &  &
+	\forall p\in\left[\frac{1-\lambda}{1+\lambda},1\right]
+\end{align}
+Solving for \(F(p)\) yields:
+\begin{align}
+	F(p)=1-\frac{(1-\lambda)(1-p)}{2\lambda p}
+\end{align}
+The equilibrium profits of both firms in this equilibrium equal
+\(\frac{1-\lambda}{2}\), which is strictly positive. Hence, there is no
+Bertrand paradox in this set-up.
+\subsection{The Diamond paradox}
+\subsubsection{Model}
+Consider a slight change of the basic model with homogeneous products and equal
+marginal costs. We assume that consumers have to incur search costs to
+find out which price each firm charges. These search costs are $s$,
+where $s$ can be arbitrarily small. Visiting the first shop is free,
+but to visit any additional shop, a consumer has to incur search costs
+$s$. Suppose again that there is a unit mass of consumers that all have
+a willingness to pay for one unit of the product that equals $v$. Firms
+have constant marginal costs $c < v$. It is crucial that consumers
+cannot observe prices before they visit a shop. For simplicity, we assume
+that there are only two firms.
+
+The timing of the game is as follows. First, firms set prices that are
+not observable. Second, consumers visit the shop of their first choice,
+and observe the price that is set by that shop. Third, consumers either
+buy from this shop, decide to visit the other shop, or decide not to buy
+at all. The equilibrium now also depends on what consumers expect. That
+makes it hard to derive reaction functions in the usual manner; these
+reaction functions now also depend on the behavior of consumers. We
+therefore choose a different manner of analysis. We first postulate a
+candidate equilibrium. Then, we derive whether any firm (or the
+consumers, for that matter), has an incentive to defect from that
+equilibrium.
+
+A natural candidate equilibrium seems to be the one that is the
+equilibrium in the standard Bertrand model, in which both firms charge a
+price $c$, consumers split evenly in the choice of their first shop,
+and consumers also decide to buy at the shop they first visit. It is easy
+to see, however, that this cannot be an equilibrium. Suppose that firm 1
+deviates and increases its price to $c + \frac{s}{2}$. First, such a
+defection cannot influence the number of consumers that visit this shop,
+as consumers can only observe the price after they have visited. Hence,
+all consumers that visit this shop are now unpleasantly surprised. Yet,
+they still have no reason to choose a different strategy in the sub-game
+that follows. Going to the other shop implies a cost-saving of
+$\frac{s}{2}$ due to a lower price (note that we consider a deviation
+from the Nash equilibrium by firm 1, which implies that firm 2 is still
+charging price $c$), but an increase in search cost by $s$. Hence,
+consumers will not continue search and the deviation is profitable.
+
+But the same argument holds for any symmetric candidate equilibrium
+that has $p<v$. For a price $p\geq v$, consumers also will not switch for
+a small price increase, but a firm is not willing to defect such a
+manner, as by definition it would decrease its profits.
+
+Thus, the unique equilibrium has both firms charging the monopoly price,
+even with infinitesimally small search costs. This is known as the
+\textit{Diamond paradox}. Also note that this result does not hinge on
+the number of firms. For any $n\geq2$, the analysis applies and the
+unique equilibrium has prices equal to the monopoly price.
+% \subsubsection{What if the first visit is not free?}
+% \subsubsection{Implications}
+% \subsection{Optimal search}
+% \subsection{Search with homogeneous products}
+% \subsection{Search with differentiated products}
+% \subsubsection{2 firms, uniform distribution}
+% \subsubsection{Solution of the general model}
+% \subsection{Exercises}
 \end{document}
