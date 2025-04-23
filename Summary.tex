@@ -305,19 +305,19 @@ Perloff-Salop model can easily be generalized to more than 2 firms.
 	      Solution: This game is symmetric hence in equilibrium both firms set the same price.
 	      Consider the indifferent consumer with location $z$, then:
 	      \begin{align*}
-		      v-P_0-tz^2                   & =v-P_1-t(1-z)^2                        \\
-		      \Longleftrightarrow P_0+tz^2 & =P_1+t(1-z)^2                          \\
-		      \Longrightarrow z            & =\sqrt{\frac{1}{2}+\frac{P_1-P_0}{2t}}
+		      v-P_0-tz^2                   & =v-P_1-t(1-z)^2                 \\
+		      \Longleftrightarrow P_0+tz^2 & =P_1+t(1-z)^2                   \\
+		      \Longrightarrow z            & =\frac{1}{2}+\frac{P_1-P_0}{2t}
 	      \end{align*}
 	      Firm 0 its expected profits are:
 	      \begin{align*}
-		      \pi_0                                             & =(P_0-c)z=(P_0-c)\sqrt{\frac{1}{2}+\frac{P_1-P_0}{2t}}                                       \\
-		      \Longrightarrow\frac{\partial\pi_0}{\partial P_0} & =\sqrt{\frac{1}{2}+\frac{P_1-P_0}{2t}}-\frac{P_0-c}{4t\sqrt{\frac{1}{2}+\frac{P_1-P_0}{2t}}} \\
-		      \overset{\text{FOC}}{\Longrightarrow}2P_1         & =3P_0-c-2t
+		      \pi_0                                             & =(P_0-c)z=(P_0-c)\frac{1}{2}+\frac{P_1-P_0}{2t} \\
+		      \Longrightarrow\frac{\partial\pi_0}{\partial P_0} & =\frac{p_1-p_0+t}{2t}-\frac{p_0-c}{2t}          \\
+		      \overset{\text{FOC}}{\Longrightarrow}P_0          & =\frac{1}{2}(P_1+c+t)
 	      \end{align*}
 	      Imposing symmetry:
 	      \begin{align*}
-		      2P=3P-c-2t\Longleftrightarrow P=c+2t
+		      P=\frac{1}{2}(P+c+t)\Longleftrightarrow P=c+t
 	      \end{align*}
 	\item Consider the Perloff-Salop model where consumers have a valuation that is uniformly
 	      distributed on $[0, 1]$. For simplicity, $c = 0$. Assume however that $v = 0$ such
