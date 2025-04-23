@@ -15,10 +15,14 @@
 \usepackage{bm}
 \usepackage{graphicx}
 \usepackage{subfig}
+\usepackage{bbm}
 
 \setlength{\parindent}{0pt}     % No paragraph indentation
 \setlength{\parskip}{1em}       % Add vertical space between paragraphs
 
+\newcommand{\pder}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\der}[2]{\frac{\d #1}{\d #2}}
+\newcommand{\ehat}{\hat\epsilon}
 \newcommand{\N}[1]{\mathcal{N}\left(#1\right)}
 \newcommand{\Z}{\mathbb{Z}}
 \DeclareMathOperator*{\argmin}{arg\,min}
@@ -38,7 +42,7 @@
 \newcommand{\V}[1]{\,\mathsf{V}\left[#1\right]}
 \newcommand{\cov}[1]{\,\mathsf{Cov}\left[#1\right]}
 \renewcommand{\d}[1]{\,\textrm{d}#1}
-\newcommand{\1}[1]{\,\mathbb{1}_{#1}} % indicator
+\newcommand{\1}[1]{\,\mathbbm{1}_{#1}} % indicator
 \renewcommand{\P}[1]{\,\mathbb{P}\left\{#1\right\}}
 \newcommand{\fat}[1]{\ThisStyle{\hstretch{1.2}{\ooalign{%
   \kern.46pt$\SavedStyle#1$\cr\kern.33pt$\SavedStyle#1$\cr%
@@ -696,6 +700,7 @@ from $i$ if $\epsilon_{kj}>\epsilon_{ij}$. Then the expected benefit from
 searching once more is then:
 \begin{align}
 	b(\epsilon_{ij})=\int_{\epsilon_{ij}}^\infty(\epsilon-\epsilon_{ij})\d F(\epsilon)
+	\label{eq:ch2expben}
 \end{align}
 The consumer searches until a match value that is at least equal to
 $\hat\epsilon$, where $b(\hat\epsilon)=s$. Given that $s$ is low enough,
@@ -800,7 +805,179 @@ Hence when the search costs are zero, the price equals $\frac{1}{2}$,
 and the equilibrium prices increase with the search costs. With higher search
 costs, a consumer that visits a firm is less likely to walk away, hence
 firms have more market power and hence charge higher prices.
-% \subsubsection{Solution of the general model}
-% \subsection{Exercises}
+\subsubsection{Solution of the general model}
+Suppose all other firms charge $p^*$ and firm 1 defects to some
+$p\neq p^*$. Consumers expect all firms to charge $p^*$. Suppose a
+consumer visits firm $i$ first and finds price $p$. If this consumer buys
+from $i$, utility $v+\epsilon_i-p_i$. A visit to some other firm $j$ gives
+$v+\epsilon_j-p^*$. Hence, $j$ is preferred over $i$ if
+$\epsilon_j>\epsilon_i-\Delta$, with $\Delta\equiv p_i-p^*$. If the
+consumer buys from $j$ rather than $i$ the benefit is
+$\epsilon_j-(\epsilon_i-\Delta)$. Hence, the expected benefit of
+searching one more time is:
+\begin{align}
+	b(\epsilon_i;\Delta)=\int_{\epsilon_i-\Delta}^\infty(\epsilon-(\epsilon_i-\Delta))\d F(\epsilon)
+\end{align}
+The consumer buys from $i$ whenever $\epsilon_i>\hat\epsilon+\Delta$.
+
+All consumers visit firms in a random order, so a share $\frac{1}{n}$
+visits firm 1 first. They buy there with probability $1-F(\hat\epsilon+\Delta)$.
+Another share $\frac{1}{n}$ "plans" to visit 1 second (if they don't
+like the product enough they find at the first firm they visit). These
+consumers buy at their first firm with probability $1-F(\hat\epsilon)$.
+Hence, the probability that such a consumer buys from firm 1 is
+$F(\hat\epsilon)(1-F(\hat\epsilon+\Delta))$. This pattern continues.
+
+Some customers visit all $n$ firms, but find a match value below $\hat\epsilon$
+every time. Such a consumer returns to the firm that, with hindsight,
+offered the highest match value. The total share of consumers that buy
+from 1 this way is:
+\begin{align}
+	R_1(p_1,p^*)=\int_{-\infty}^{\hat\epsilon+\Delta}F(\epsilon-\Delta)^{N-1}\d F(\epsilon).
+\end{align}
+Such a consumer has $\epsilon_1<\hat\epsilon+\Delta$ and all other match
+values smaller than $\epsilon-\Delta$.
+
+Combining terms, total demand for firm 1 when charging $p_1$ while others
+charge $p^*$ is:
+\begin{align}
+	D_1(p_1,p^*) & =\frac{1}{n}\sum_{i=1}^nF(\hat\epsilon)^{i-1}
+	(1-F(\hat\epsilon+\Delta))+R_1(p_1,p^*)                      \\
+	             & =\frac{1}{n}\left[
+	\frac{1-F(\hat\epsilon)^n}{1-F(\epsilon)}\right]
+	(1-F(\hat\epsilon+\Delta))+
+	\int_{-\infty}^{\hat\epsilon+\Delta}
+	F(\epsilon-\Delta)^{n-1}\d F(\epsilon).
+\end{align}
+Profits of firm 1 are given by $\pi_1(p_1,p^*)=p_1D_1(p_1,p^*)$. Take the
+FOC and set $\frac{\partial\pi_1(p_1,p^*)}{\partial p_1}=0$. Equilibrium
+requires that this is satisfied for $p_1=p^*$. Note:
+\begin{align}
+	\frac{\partial\pi_1(p_1,p^*)}{\partial p_1}=D_1(p_1,p^*)+
+	p_1\frac{\partial D_1(p_1,p^*)}{\partial p_1}=0,
+	\label{eq:ch2FOC}
+\end{align}
+and:
+\begin{align}
+	\frac{\partial D_1(p_1,p^*)}{\partial p_1} & =
+	-\frac{1}{n}\left[\frac{1-F(\hat\epsilon)^n}{1-F(\hat\epsilon)}\right]
+	f(\hat\epsilon+\Delta)+F(\hat\epsilon)^{n-1}f(\hat\epsilon+\Delta)                      \\
+	                                           & -(n-1)\int_{-\infty}^{\hat\epsilon+\Delta}
+	F(\epsilon-\Delta)^{n-2}f^2(\epsilon)\d\epsilon.
+\end{align}
+Imposing symmetry, and using integration by parts:
+\begin{align}
+	\frac{\partial D_1(p^*,p^*)}{\partial p_1} & =
+	-\frac{1}{n}\left[\frac{1-F(\hat\epsilon)^n}{1-F(\hat\epsilon)}\right]
+	f(\hat\epsilon)                                \\
+	                                           & +
+	F(\hat\epsilon)^{n-1}f(\hat\epsilon)
+	-(n-1)\int_{-\infty}^{\hat\epsilon}
+	F(\epsilon)^{n-2}f^2(\epsilon)\d\epsilon       \\
+	                                           & =
+	-\frac{1}{n}\left[\frac{1-F(\hat\epsilon)^n}{1-F(\hat\epsilon)}\right]+
+	\int_{-\infty}^{\hat\epsilon}f'(\epsilon)F(\epsilon)^{n-1}\d\epsilon.
+\end{align}
+Firms are symmetric and in equilibrium all consumer buy. This implies
+that $D_1(p^*,p^*)=\frac{1}{n}$. Using \ref{eq:ch2FOC}, again imposing
+symmetry:
+\begin{align}
+	p^* & =-\frac{D_1(p^*,p^*)}{\partial D_1(p^*,p^*)/\partial p_1}
+	=\left(
+	\frac{1-F(\hat\epsilon)^n}{1-F(\hat\epsilon)}f(\hat\epsilon)
+	-n\int_{-\infty}^{\hat\epsilon}f'(\epsilon)F(\epsilon)^{n-1}\d\epsilon
+	\right)^{-1}.
+\end{align}
+Assume now that $F$ is $\Unif{0,1}$, then:
+\begin{align}
+	D_1(p_1,p^*)=\frac{1}{n}
+	\left[\frac{1-\hat\epsilon^n}{1-\hat\epsilon}\right]
+	(1-\hat\epsilon-\Delta)+
+	\int_{-\infty}^{\hat\epsilon+\Delta}(\epsilon-\Delta)^{n-1}\d\epsilon,
+\end{align}
+so:
+\begin{align}
+	\frac{\partial D_1(p^*,p^*)}{\partial p_1}=-\frac{1}{n}
+	\left[\frac{1-\hat\epsilon^n}{1-\hat\epsilon}\right].
+\end{align}
+Under this assumption the derivative of the number of returning
+consumers with respect to $p_1$, that is,
+$\frac{\partial R_1(p_1,p^*)}{\partial p_1}$, is equal to zero. The
+equilibrium price now equals:
+\begin{align}
+	p^*=\frac{1-\hat\epsilon}{1-\hat\epsilon^n}.
+\end{align}
+from \ref{eq:ch2expben}:
+\begin{align}
+	b(\hat\epsilon)=\int_{\hat\epsilon}^1(\epsilon-\hat\epsilon)\d\epsilon
+	=\frac{1}{2}(1-\hat\epsilon)^2,
+\end{align}
+hence:
+\begin{align}
+	\hat\epsilon        & =1-\sqrt{2s}                          \\
+	\Longrightarrow p^* & =\frac{\sqrt{2s}}{1-(1-\sqrt{2s})^n}.
+\end{align}
+Suppose the number of firms increases (this does not affect
+$\hat\epsilon$). Hence:
+\begin{align}
+	\frac{\partial p^*}{\partial n}=
+	\frac{\partial}{\partial n}\left(\frac{1-\hat\epsilon}{1-\hat\epsilon^n}\right)
+	=\hat\epsilon^n\ln{\hat\epsilon}\frac{1-\hat\epsilon}{(1-\hat\epsilon^n)^2}
+	<0,
+\end{align}
+as $\ln{\hat\epsilon}<0$. Hence, \textit{having more firms leads to lower
+	prices}.
+
+Suppose the search costs increase. Note $\hat\epsilon$ is defined by
+$b(\hat\epsilon)=s$. $b(\hat\epsilon)$ is decreasing in $\epsilon$, so
+we have that an increase in search costs leads to a lower $\hat\epsilon$
+(If search costs are higher, a consumer is willing to settle for a lower
+match value). We have:
+\begin{align}
+	\pder{p^*}{\ehat}=\pder{}{\ehat}
+	\left(\frac{1-\ehat}{1-\ehat^n}\right)
+	=\frac{(1-\ehat)n\ehat^{n-1}-(1-\ehat^n)}{(1-\ehat^n)^2}
+	=\frac{\ehat^{n-1}(n(1-\ehat)+\ehat)-1}{(1-\ehat^n)^2}
+	<0
+\end{align}
+Hence, \textit{equilibrium prices are increasing in search costs}; as
+search costs increase, firms have more market power over the consumers
+that do visit them, which implies that they can set higher prices.
+\subsection{Exercises}
+\begin{enumerate}
+	\item Consider Varian's model of sales as described in Section 2.3.
+	      Suppose the number of firms is $n>2$. Derive the mixed strategy
+	      equilibrium.
+
+	      Solution:
+	\item Consider the following variation of Varian (1980)’s model of sales.
+	      A duopoly
+	      competes in prices. Costs of production are zero. There is a mass 1 of consumers
+	      that is willing to pay at most 2, and a mass 1 of consumers that is willing to pay at
+	      most 3. For both groups there is a fraction $\lambda$ that is informed and a fraction $1-\lambda$
+	      that is uninformed.
+	      \begin{enumerate}
+		      \item Derive the best-reply function of each firm.
+		      \item Derive the Nash equilibrium in prices.
+	      \end{enumerate}
+
+	      Solution:
+	\item Consider a model of search with differentiated products as analyzed in this chap-
+	      ter. There are two firms that each have zero costs. Match values are uniformly
+	      distributed on $[0, 1]$. A share $\lambda$ of consumers have search costs $s = 0.25$. The other
+	      $1-\lambda$ have search costs $s=0.16$. Derive the equilibrium in prices.
+
+	      Solution:
+	\item In the model of search with differentiated products described in these notes, we
+	      assumed that consumers pick a firm at random to visit first. Let us now assume that
+	      that is no longer the case, and can advertise to attract consumers. More precisely,
+	      if firm 1 puts out $a_1$ ads and firm 2 puts out $a_2$, then the probability that firm 1
+	      will be visited first is given by $a_1/(a_1 + a_2)$. The cost of each ad are $1/4$,
+	      Suppose that match values are uniformly distributed on $[0,1]$, and that firms set
+	      prices and advertising levels simultaneously. Derive equilibrium profits as a function
+	      of search costs $s$.
+
+	      Solution:
+\end{enumerate}
 % \section{Advertising}
 \end{document}
