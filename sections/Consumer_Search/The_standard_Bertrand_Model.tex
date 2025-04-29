@@ -1,0 +1,60 @@
+\subsection{The standard Bertrand Model}
+Consider two firms that produce identical goods. There are no frictions, i.e
+the consumers buy from the firm that sets the lowest price. If they set
+the same price they both get half the market share. Assume firms can
+fulfill any demand they face. The demand function is $q=D(p)$, marginal
+costs constant equal $c$. Monopoly profits assumed to be strictly concave,
+bounded and the monopoly price is given by:
+\begin{align}
+	p_m=\underset{p}{\argmax}(p-c)D(p)
+\end{align}
+Demand for firm $i$ is written \(D_i(p_i,p_j)\):
+\begin{align}
+	D_i(p_i,p_j) =
+	\begin{cases}
+		D(p_i)            & \text{if }p_i<p_j \\
+		\frac{1}{2}D(p_i) & \text{if }p_i=p_j \\
+		0                 & \text{if }p_i>p_j
+	\end{cases}
+\end{align}
+The profits of firm $i$ are then:
+\begin{align}
+	\Pi_i(p_i,p_j)=(p_i-c)D_i(p_i,p_j)
+\end{align}
+This profit function is discontinuous.
+
+First consider the case when \(p_j>p_m\). In such a case the best
+reply of firm \(i\) is to set \(p_i=p_m\). Then it attracts all consumers,
+while charging the monopoly price.
+
+Now suppose \(c<p_j\leq p_m\). Firm \(i\) has three choices. Charging
+price \(p_i>p_j\) it has zero profits. Charging price \(p_i=p_j\),
+its sales are \(\frac{1}{2}D(p_j)\). Given the concavity of the profit
+function and the fact that \(p_j<p_m\), the best response of \(i\) is to
+set the price slightly below \(p_j\), say \(p_i=p_j-\epsilon\), with
+\(\epsilon\) arbitrarily small.
+
+Consider the case when \(p_j<c\). Undercutting now yields negative profits.
+Hence, the best reply is to set any price \(p_i>p)j\) with zero profit.
+
+Finally, consider the case in which \(p_j=c\). Undercutting again leads
+to negative profits. Both \(p_i=p_j\) and \(p_i>p_j\) yield 0 profits.
+Therefore the best reply is to set any \(p_i\geq c\).
+
+Summarizing:
+\begin{align}
+	R_i(p_j)=
+	\begin{cases}
+		\in(p_j,\infty) & \text{if }p_j<c         \\
+		\in[c,\infty)   & \text{if }p_j=c         \\
+		p_j-\epsilon    & \text{if }c<p_j\leq p_m \\
+		p_m             & \text{if }p_j>p_m
+	\end{cases}
+\end{align}
+From this we conclude there is unique Nash equilibrium where both firms
+charge price \(c\), with zero profit for both firms.
+
+This result is known as the \textit{Bertrand paradox}. It qualifies as a paradox
+since it is hard to believe that two firms is already enough to restore
+competitive outcome in a market. When only two firms are active in a
+market, one would expect them to make positive profits.

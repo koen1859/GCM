@@ -1,0 +1,100 @@
+\subsection{A model of sales}
+Consider a duopoly that competes in prices. Assume there is a mass of
+consumers that equals 1, where each consumer is willing to pay at most
+1 for the product. Each consumer demands only one unit of product:
+\begin{align}
+	D(p)=
+	\begin{cases}
+		1 & \text{if }p\leq1 \\
+		0 & \text{if }p>1
+	\end{cases}
+\end{align}
+Assume 0 marginal costs, and that there are two types of consumers:
+A fraction of \(\lambda\) consumers is informed, which implies they can
+observe the prices of both firms. The remaining fraction of \(1-\lambda\)
+is uninformed: they pick at random which firm to go to and buy the
+product if the price does not exceed 1.
+
+The expected profits for firm \(i\) are given by:
+\begin{align}
+	\Pi_i(p_i,p_j)=
+	\begin{cases}
+		0                                                & \text{if }p_i>1         \\
+		\frac{1}{2}(1-\lambda)p_i                        & \text{if }1\geq p_i>p_j \\
+		\frac{1}{2}p_i                                   & \text{if }p_i=p_j\leq1  \\
+		\left[\lambda+ \frac{1}{2}(1-\lambda) \right]p_i & \text{if }p_i<p_j\leq1
+	\end{cases}
+\end{align}
+provided \(p_i\leq1\).
+
+We can derive the best-response functions. First, note that whenever
+firm \(i\) would want to charge a higher price than \(j\), the best
+option is to charge a price of 1, since it faces the same demand as any
+other price in \((p_j,1]\), and maximizes its profits if it sets its
+price at 1. This implies the following. Suppose \(p_j>0\). The best choice
+for firm \(i\) is to either slightly undercut \(p_j\) which yields profits
+\(\left[\lambda + \frac{1}{2}(1-\lambda) \right]p_j\) or to set \(p_i=1\),
+yields profits \(\frac{1-\lambda}{2}\). Firm \(i\) strictly prefers the
+first strategy when:
+\begin{align}
+	\lambda p_j+\frac{1}{2}(1-\lambda) & >\frac{1}{2}(1-\lambda)      \\
+	\Longleftrightarrow p_j            & >\frac{1-\lambda}{1+\lambda}
+\end{align}
+This yields the reaction functions:
+\begin{align}
+	R_i(p_j)=
+	\begin{cases}
+		1            & \text{if }p_j\leq\frac{1-\lambda}{1+\lambda} \\
+		p_j-\epsilon & \text{if }p_j>\frac{1-\lambda}{1+\lambda}
+	\end{cases}
+\end{align}
+There is no Nash equilibrium in pure strategies. Suppose firm 1 sets
+\(p_1=1\). Firm 2 will slightly undercut. But now, firm 1 wants to
+undercut firm 2 again. This process continues until
+\(p=\frac{1-\lambda}{1+\lambda}\). Then no firm has incentive to
+undercut the other, but each firm does have an incentive to defect by
+setting its price equal 1, where the whole process starts anew.
+
+There is however, an equilibrium in mixed strategies. Suppose both firms
+draw their price from some continuous distribution function \(F(p)\)
+on the support \(\left[\underline{p},\overline{p}\right]\). For this too
+be an equilibrium, we need that given that firm \(j\) uses the mixed
+strategy, any \(p_i\in\left[\underline{p},\overline{p}\right]\) must
+yield the same expected profit for firm \(i\).
+
+Note that the profits that firms make in the mixed strategy equilibrium
+can not be lower than \(\frac{1-\lambda}{2}\), then a firm could just set
+price 1 and have more profits. This implies we can not have \(\overline{p}>1\).
+Consider the possibility that \(\overline{p}<1\). A firm charging price
+\(\overline{p}\) is certain that it is charging the highest price on the
+market. Then it can do better by charging price 1 instead. Hence we must
+have \(\overline{p}=1\).
+
+A firm charging \(\overline{p}=1\) makes profit \(\frac{1-\lambda}{2}\),
+this implies that any \(p\in\left[\underline{p},\overline{p}\right]\)
+must yield those same profits. Consider a firm charging \(\underline{p}\).
+With certainty, this firm charges the lowest price. Its profits then
+equal \(\left[\lambda+ \frac{1}{2}(1-\lambda) \right]\underline{p}\).
+This has to equal \(\frac{1-\lambda}{2}\), we thus have that
+\(\underline{p}=\frac{1-\lambda}{1+\lambda}\).
+
+If firm \(i\) charges price \(p\), the probability that firm \(j\) charges
+a lower price if \(F(p)\). When setting some
+\(p_i\in\left[\underline{p},\overline{p}\right]\), expected profits are:
+\begin{align}
+	\E{\pi_i(p)} & =F(p)\left(\frac{1}{2}(1-\lambda)\right)p+
+	(1-F(p))\left(\lambda+\frac{1}{2}(1-\lambda)\right)p      \\
+	             & =\frac{1}{2}(1-\lambda)p+(1-F(p))\lambda p
+\end{align}
+We thus need:
+\begin{align}
+	\frac{1}{2}(1-\lambda)p+(1-F(p))\lambda p=\frac{1-\lambda}{2}, &  &
+	\forall p\in\left[\frac{1-\lambda}{1+\lambda},1\right]
+\end{align}
+Solving for \(F(p)\) yields:
+\begin{align}
+	F(p)=1-\frac{(1-\lambda)(1-p)}{2\lambda p}
+\end{align}
+The equilibrium profits of both firms in this equilibrium equal
+\(\frac{1-\lambda}{2}\), which is strictly positive. Hence, there is no
+Bertrand paradox in this set-up.

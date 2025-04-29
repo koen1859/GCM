@@ -1,0 +1,266 @@
+\subsection{Search with differentiated products}
+Suppose there are $n$ firms. Their costs are zero. There is a unit mass
+of consumers that all have search costs $s$. If a consumer buys from $i$,
+a utility is obtained:
+\begin{align}
+	U^i_j(p_i,\epsilon_i)=v+\epsilon_i-p_i,
+\end{align}
+where $v$ is large enough such that s.t. a consumer always buys in
+equilibrium. We assume $\epsilon_i$ is the realization of a r.v. with
+CDF $F$ and continuously differentiable density $f$. Assume $F$ is
+log-concave. $\epsilon_{ij}$ can be interpreted as the match value
+between consumer $j$ and product $i$. To find out this value, $j$ first
+has to visit firm $i$. By assumption, firm $i$ never finds out
+$\epsilon_{ij}$.
+
+Assume that all firms charge some price $p^*$. Suppose our consumer
+visits firm $i$ and finds match value $\epsilon_{ij}$. Buying from $i$
+yields utility $v+\epsilon_{ij}-p^*$. A visit to some other firm $k$ will
+give utility $v+\epsilon_{kj}-p^*$. This is higher than utility of buying
+from $i$ if $\epsilon_{kj}>\epsilon_{ij}$. Then the expected benefit from
+searching once more is then:
+\begin{align}
+	b(\epsilon_{ij})=\int_{\epsilon_{ij}}^\infty(\epsilon-\epsilon_{ij})\d F(\epsilon)
+	\label{eq:ch2expben}
+\end{align}
+The consumer searches until a match value that is at least equal to
+$\hat\epsilon$, where $b(\hat\epsilon)=s$. Given that $s$ is low enough,
+such a $\hat\epsilon$ always exists and is unique.
+\subsubsection{2 firms, uniform distribution}
+If all firms charge $p^*$ and the consumer finds $\epsilon_i$ at the first
+firm, the expected benefit from visiting the other firm is:
+\begin{align}
+	b(\epsilon_i)=\frac{(1-\epsilon_i)^2}{2}
+\end{align}
+Since visiting one more firm costs $s$, you will do so whenever
+$b(\epsilon_i)>s$, hence if $\epsilon_i>\hat\epsilon$, with:
+\begin{align}
+	\hat\epsilon=1-\sqrt{2s}
+	\label{eq:epshat}
+\end{align}
+When $s=0$, consumers will continue searching for any value of $\epsilon$
+they find at the first firm. The higher $s$, the lower $\hat\epsilon$,
+hence the earlier they are going to settle for the product they find at
+the first firm they visit.
+
+Suppose that a consumer visits firm $i$ first and finds price $p$. If
+this consumer buys from $i$, utility $v+\epsilon_i-p$ is obtained. A
+visit to the other firm will give utility $v+\epsilon_j-p^*$. Hence,
+$j$ is preferred over $i$ whenever $\epsilon_j>\epsilon_i+\Delta$, with
+$\Delta\equiv p^*-p$.  If prices were equal the consumer would buy from $i$
+whenever $\epsilon_i>\hat\epsilon$. But if firm $i$ now charges a price
+that is $\Delta$ lower, buying from i gives an additional utility of
+$\Delta$ relative to buying from the other firm. Hence, this consumer
+now buys from $i$ whenever $\epsilon_i+\Delta>\hat\epsilon$.
+
+The next step is to find the demand of firm $i$ if it charges $p$ rather
+than $p^*$. There are 3 ways in which a consumer ends up buying from
+firm $i$.
+
+First, with probability $\frac{1}{2}$ firm $i$ is visited
+first, and with this consumer buys right away if $\epsilon_i>\hat\epsilon-\Delta$,
+which happens with probability $1-\hat\epsilon+\Delta$. Hence the
+probability this occurs is:
+\begin{align}
+	\frac{1}{2}(1-\hat\epsilon+\Delta)
+	\label{eq:ch2prob1}
+\end{align}
+
+Second, with probability $\frac{1}{2}$ the consumer visits firm $j$ first.
+With probability $\hat\epsilon$ a match value that is too low is found.
+Then a match that is high enough at firm $i$ is found with probability
+$1-\hat\epsilon+\Delta$. Hence the joint probability of this is:
+\begin{align}
+	\frac{1}{2}\hat\epsilon(1-\hat\epsilon+\Delta)
+	\label{eq:ch2prob2}
+\end{align}
+
+Third, it could be the case that she visits both firms, but finds a match value at both
+firms that is too low. Then, she will just go back to the firm that with hindsight offers
+the best deal. The consumer buys from $i$ in this way when all of the
+following conditions hold:
+\begin{align}
+	\epsilon_i & <\hat\epsilon-\Delta \\
+	\epsilon_j & <\hat\epsilon        \\
+	\epsilon_i & >\epsilon_j-\Delta
+\end{align}
+This happens with probability:
+\begin{align}
+	\frac{1}{2}(\epsilon^2-\Delta^2)
+	\label{eq:ch2prob3}
+\end{align}
+
+Then we can sum \ref{eq:ch2prob1}, \ref{eq:ch2prob2} and
+\ref{eq:ch2prob3} to obtain the probability that a firm buys from $i$:
+\begin{align}
+	D_i(p^*,\Delta) & =
+	\frac{1}{2}(1-\hat\epsilon+\Delta)+
+	\frac{1}{2}\hat\epsilon(1-\hat\epsilon+\Delta)+
+	\frac{1}{2}(\epsilon^2-\Delta^2)                                         \\
+	                & = \frac{1}{2}+\frac{1}{2}\Delta(1+\hat\epsilon-\Delta)
+\end{align}
+Note if both firms charge the same price, hence $\Delta=0$,
+$D_i=\frac{1}{2}$.
+
+Using the definition of $\Delta$:
+\begin{align}
+	D_i(p^*,p)=\frac{1}{2}+\frac{1}{2}(p^*-p)(1+\hat\epsilon-p^*+p)
+\end{align}
+Profits of firm $i$ equal $\pi_i=pD_i$, FOC gives:
+\begin{align}
+	\frac{\partial D_i}{\partial p}+D_i=0
+\end{align}
+To solve for equilibrium, impose symmetry, hence $D_i=\frac{1}{2}$.
+Moreover:
+\begin{align}
+	\frac{\partial D_i}{\partial p} & =p^*-p-\frac{1}{2}(1+\hat\epsilon)                  \\
+	                                & =-\frac{1}{2}(1+\hat\epsilon),\text{ with symmetry}
+\end{align}
+
+Hence, the equilibrium price is:
+\begin{align}
+	p^* & =\frac{1}{1+\hat\epsilon}                            \\
+	    & =\frac{1}{2-\sqrt{2s}},\text{ using \ref{eq:epshat}}
+\end{align}
+Hence when the search costs are zero, the price equals $\frac{1}{2}$,
+and the equilibrium prices increase with the search costs. With higher search
+costs, a consumer that visits a firm is less likely to walk away, hence
+firms have more market power and hence charge higher prices.
+\subsubsection{Solution of the general model}
+Suppose all other firms charge $p^*$ and firm 1 defects to some
+$p\neq p^*$. Consumers expect all firms to charge $p^*$. Suppose a
+consumer visits firm $i$ first and finds price $p$. If this consumer buys
+from $i$, utility $v+\epsilon_i-p_i$. A visit to some other firm $j$ gives
+$v+\epsilon_j-p^*$. Hence, $j$ is preferred over $i$ if
+$\epsilon_j>\epsilon_i-\Delta$, with $\Delta\equiv p_i-p^*$. If the
+consumer buys from $j$ rather than $i$ the benefit is
+$\epsilon_j-(\epsilon_i-\Delta)$. Hence, the expected benefit of
+searching one more time is:
+\begin{align}
+	b(\epsilon_i;\Delta)=\int_{\epsilon_i-\Delta}^\infty(\epsilon-(\epsilon_i-\Delta))\d F(\epsilon)
+\end{align}
+The consumer buys from $i$ whenever $\epsilon_i>\hat\epsilon+\Delta$.
+
+All consumers visit firms in a random order, so a share $\frac{1}{n}$
+visits firm 1 first. They buy there with probability $1-F(\hat\epsilon+\Delta)$.
+Another share $\frac{1}{n}$ "plans" to visit 1 second (if they don't
+like the product enough they find at the first firm they visit). These
+consumers buy at their first firm with probability $1-F(\hat\epsilon)$.
+Hence, the probability that such a consumer buys from firm 1 is
+$F(\hat\epsilon)(1-F(\hat\epsilon+\Delta))$. This pattern continues.
+
+Some customers visit all $n$ firms, but find a match value below $\hat\epsilon$
+every time. Such a consumer returns to the firm that, with hindsight,
+offered the highest match value. The total share of consumers that buy
+from 1 this way is:
+\begin{align}
+	R_1(p_1,p^*)=\int_{-\infty}^{\hat\epsilon+\Delta}F(\epsilon-\Delta)^{N-1}\d F(\epsilon).
+\end{align}
+Such a consumer has $\epsilon_1<\hat\epsilon+\Delta$ and all other match
+values smaller than $\epsilon-\Delta$.
+
+Combining terms, total demand for firm 1 when charging $p_1$ while others
+charge $p^*$ is:
+\begin{align}
+	D_1(p_1,p^*) & =\frac{1}{n}\sum_{i=1}^nF(\hat\epsilon)^{i-1}
+	(1-F(\hat\epsilon+\Delta))+R_1(p_1,p^*)                      \\
+	             & =\frac{1}{n}\left[
+	\frac{1-F(\hat\epsilon)^n}{1-F(\epsilon)}\right]
+	(1-F(\hat\epsilon+\Delta))+
+	\int_{-\infty}^{\hat\epsilon+\Delta}
+	F(\epsilon-\Delta)^{n-1}\d F(\epsilon).
+\end{align}
+Profits of firm 1 are given by $\pi_1(p_1,p^*)=p_1D_1(p_1,p^*)$. Take the
+FOC and set $\frac{\partial\pi_1(p_1,p^*)}{\partial p_1}=0$. Equilibrium
+requires that this is satisfied for $p_1=p^*$. Note:
+\begin{align}
+	\frac{\partial\pi_1(p_1,p^*)}{\partial p_1}=D_1(p_1,p^*)+
+	p_1\frac{\partial D_1(p_1,p^*)}{\partial p_1}=0,
+	\label{eq:ch2FOC}
+\end{align}
+and:
+\begin{align}
+	\frac{\partial D_1(p_1,p^*)}{\partial p_1} & =
+	-\frac{1}{n}\left[\frac{1-F(\hat\epsilon)^n}{1-F(\hat\epsilon)}\right]
+	f(\hat\epsilon+\Delta)+F(\hat\epsilon)^{n-1}f(\hat\epsilon+\Delta)                      \\
+	                                           & -(n-1)\int_{-\infty}^{\hat\epsilon+\Delta}
+	F(\epsilon-\Delta)^{n-2}f^2(\epsilon)\d\epsilon.
+\end{align}
+Imposing symmetry, and using integration by parts:
+\begin{align}
+	\frac{\partial D_1(p^*,p^*)}{\partial p_1} & =
+	-\frac{1}{n}\left[\frac{1-F(\hat\epsilon)^n}{1-F(\hat\epsilon)}\right]
+	f(\hat\epsilon)                                \\
+	                                           & +
+	F(\hat\epsilon)^{n-1}f(\hat\epsilon)
+	-(n-1)\int_{-\infty}^{\hat\epsilon}
+	F(\epsilon)^{n-2}f^2(\epsilon)\d\epsilon       \\
+	                                           & =
+	-\frac{1}{n}\left[\frac{1-F(\hat\epsilon)^n}{1-F(\hat\epsilon)}\right]+
+	\int_{-\infty}^{\hat\epsilon}f'(\epsilon)F(\epsilon)^{n-1}\d\epsilon.
+\end{align}
+Firms are symmetric and in equilibrium all consumer buy. This implies
+that $D_1(p^*,p^*)=\frac{1}{n}$. Using \ref{eq:ch2FOC}, again imposing
+symmetry:
+\begin{align}
+	p^* & =-\frac{D_1(p^*,p^*)}{\partial D_1(p^*,p^*)/\partial p_1}
+	=\left(
+	\frac{1-F(\hat\epsilon)^n}{1-F(\hat\epsilon)}f(\hat\epsilon)
+	-n\int_{-\infty}^{\hat\epsilon}f'(\epsilon)F(\epsilon)^{n-1}\d\epsilon
+	\right)^{-1}.
+\end{align}
+Assume now that $F$ is $\Unif{0,1}$, then:
+\begin{align}
+	D_1(p_1,p^*)=\frac{1}{n}
+	\left[\frac{1-\hat\epsilon^n}{1-\hat\epsilon}\right]
+	(1-\hat\epsilon-\Delta)+
+	\int_{-\infty}^{\hat\epsilon+\Delta}(\epsilon-\Delta)^{n-1}\d\epsilon,
+\end{align}
+so:
+\begin{align}
+	\frac{\partial D_1(p^*,p^*)}{\partial p_1}=-\frac{1}{n}
+	\left[\frac{1-\hat\epsilon^n}{1-\hat\epsilon}\right].
+\end{align}
+Under this assumption the derivative of the number of returning
+consumers with respect to $p_1$, that is,
+$\frac{\partial R_1(p_1,p^*)}{\partial p_1}$, is equal to zero. The
+equilibrium price now equals:
+\begin{align}
+	p^*=\frac{1-\hat\epsilon}{1-\hat\epsilon^n}.
+\end{align}
+from \ref{eq:ch2expben}:
+\begin{align}
+	b(\hat\epsilon)=\int_{\hat\epsilon}^1(\epsilon-\hat\epsilon)\d\epsilon
+	=\frac{1}{2}(1-\hat\epsilon)^2,
+\end{align}
+hence:
+\begin{align}
+	\hat\epsilon        & =1-\sqrt{2s}                          \\
+	\Longrightarrow p^* & =\frac{\sqrt{2s}}{1-(1-\sqrt{2s})^n}.
+\end{align}
+Suppose the number of firms increases (this does not affect
+$\hat\epsilon$). Hence:
+\begin{align}
+	\frac{\partial p^*}{\partial n}=
+	\frac{\partial}{\partial n}\left(\frac{1-\hat\epsilon}{1-\hat\epsilon^n}\right)
+	=\hat\epsilon^n\ln{\hat\epsilon}\frac{1-\hat\epsilon}{(1-\hat\epsilon^n)^2}
+	<0,
+\end{align}
+as $\ln{\hat\epsilon}<0$. Hence, \textit{having more firms leads to lower
+	prices}.
+
+Suppose the search costs increase. Note $\hat\epsilon$ is defined by
+$b(\hat\epsilon)=s$. $b(\hat\epsilon)$ is decreasing in $\epsilon$, so
+we have that an increase in search costs leads to a lower $\hat\epsilon$
+(If search costs are higher, a consumer is willing to settle for a lower
+match value). We have:
+\begin{align}
+	\pder{p^*}{\ehat}=\pder{}{\ehat}
+	\left(\frac{1-\ehat}{1-\ehat^n}\right)
+	=\frac{(1-\ehat)n\ehat^{n-1}-(1-\ehat^n)}{(1-\ehat^n)^2}
+	=\frac{\ehat^{n-1}(n(1-\ehat)+\ehat)-1}{(1-\ehat^n)^2}
+	<0
+\end{align}
+Hence, \textit{equilibrium prices are increasing in search costs}; as
+search costs increase, firms have more market power over the consumers
+that do visit them, which implies that they can set higher prices.

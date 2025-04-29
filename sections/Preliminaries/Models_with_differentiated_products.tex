@@ -1,0 +1,153 @@
+\subsection{Models with differentiated products}
+\subsubsection{Hotelling competition}
+With horizontal product differentiation different consumers prefer different products. With
+vertical product differentiation all consumers agree which product is preferable.
+
+In Hotelling, consumers are normally distributed on line of unit length, the number of consumer
+is normalized to 1. Consumers either buy 1 unit of good, or none. Each consumer obtains gross
+utility $v$ from consuming the product. There are 2 firms, one located at 0, one located at 1.
+Consumer located at $x$ needs to travel distance $x$ to buy from firm 0 and $1-x$ distance to
+buy from firm 1. Transportation costs are $t$ per unit of distance. Marginal costs for both firms
+are constant and equal to $c$. From this information it can be concluded that in equilibrium both
+firms charge the same price since the game is symmetric.
+Suppose firm $i$ charges price $P_i$. Then a consumer located at $x$ buys from firm 0 iff
+\begin{align}
+	v-P_0-tx>v-P_1-t(1-x)
+\end{align}
+provided that $v-P_0-tx>0$. Assume entire market is covered: in equilibrium prices are s.t.
+everyone consumes. This implies that $v>2t$.
+
+Define a consumer $z$ that is indifferent between buying from 0 or 1. Every consumer located at
+$x<z$ buys from 0, every consumer $x>z$ buys from 1. This consumer $z$ is located at
+\begin{align}
+	P_0+tz                & =P_1+t(1-z)                     \\
+	\Longleftrightarrow z & =\frac{1}{2}+\frac{P_1-P_0}{2t}
+\end{align}
+Total sales for firm 0 equal $z$ and for firm 1 $1-z$. When they charge the same price
+$z=\frac{1}{2}$. Profits for firm 0 are:
+\begin{align}
+	\Pi_0 & = (P_0-c)z                                         \\
+	      & =(P_0-c)\left(\frac{1}{2}\frac{P_1-P_0}{2t}\right)
+\end{align}
+Then we maximize wrt $P_0$ to get reaction function:
+\begin{align}
+	P_0=R_0(P_1)=\frac{1}{2}(c+t+P_1)
+\end{align}
+And by symmetry:
+\begin{align}
+	P_1=R_1(P_0)=\frac{1}{2}(c+t+P_0)
+\end{align}
+Thus, in equilibrium (by equation the two reaction functions):
+\begin{align}
+	P_0^* & =P_1^*=c+t          \\
+	\Pi_0 & =\Pi_1=\frac{1}{2}t
+\end{align}
+\subsubsection{The circular city: Salop}
+Consumers are located uniformly on the edge of a circle with perimeter equal to 1. Consumers wish to buy
+1 unit of good, have valuation $v$ and transport cost $t$ per unit of distance. Each firm is
+allowed to locate in 1 location. There is a fixed cost of entry $f$ and marginal costs $c$.
+Hence, firm $i$ has profit $(p_i-c)D_i-f$ if it enters (where $D_i$) is the demand it faces, and
+0 otherwise.
+
+In the first stage, the firms decide simultaneously whether to enter or not. Let $n$ denote the
+number of entering firms. The firms are located equidistant from each other on the edge of the
+circle.
+
+This can be solved using backward induction. Assume $n$ firms have entered, and suppose all
+firms except firm 0 charge price $p$, then firm 0 charges price $R_0(p)$. In equilibrium,
+$R_0(p^*)=p^*$. Let firm 0 have location 0. The location of firm 0's right-hand neighbor is
+$\frac{1}{n}$ (firm 1). Consider consumers located between firm 0 and 1. If firm 0 charges
+price $p_0$, then the consumer $z_{0-1}$ that is indifferent between firm 0 and 1 is:
+\begin{align}
+	p_0+tz_{0-1}                & =p+t\left(\frac{1}{n}-z_{0-1}\right) \\
+	\Longleftrightarrow z_{0-1} & =\frac{1}{2n}+\frac{p-p_0}{2t}
+\end{align}
+The same holds for the left-hand side of firm 0, hence its profits are:
+\begin{align}
+	\Pi_0(p_0,p)=2(p_0-c)\left(\frac{1}{2n}+\frac{p-p_0}{2t}\right)
+\end{align}
+Maximize w.r.t. $p_0$ to find the reaction function:
+\begin{align}
+	R_0(p)=\frac{1}{2}\left(p+c+\frac{t}{n}\right)
+\end{align}
+Then we impose symmetry:
+\begin{align}
+	p^*=c+\frac{t}{n}\text{ with profits }\Pi^*=\frac{t}{n^2}
+\end{align}
+Now we move back to stage 1. Firms enter the market as long as profits are positive. Hence,
+the number of enterers is s.t.
+\begin{align}
+	\Pi^*-f=\frac{t}{n^2}-f=0\Longleftrightarrow n^* & =\sqrt{\frac{t}{f}} \\
+	\Longrightarrow p^*                              & =c+\sqrt{tf}
+\end{align}
+Consumer's average transportation cost is $\frac{t}{4n}=\frac{\sqrt{tf}}{4}$. When the entry
+cost tends to 0 the number of entering firms tends to infinity and the market price tends
+to marginal cost.
+
+A social planner would choose $n$ in order to minimize the sum of fixed cost and transportation
+costs: $\underset{n}{\min}\left(nf+\frac{t}{4n}\right)
+	\Longrightarrow n=\frac{1}{2}\sqrt{\frac{t}{f}}=\frac{1}{2}n^*$, hence the market generates
+too many firms. Similar results hold for quadratic transportation costs.
+
+There are three natural extensions that would make the model more realistic: the
+introduction of a location choice, the possibility that firms do not enter simultaneously,
+and the possibility that a firm locates at several points in the product space.
+\subsubsection{Perloff and Salop}
+Suppose there are two firms, $A$ and $B$, and a unit mass of consumers. Consumer $j$ has a
+willingness to pay for the product of firm $i\in\{A,B\}$ that is given by $v+\epsilon_{ij}$,
+where $\epsilon_{ij}$ is the realization of a r.v. with cumulative distribution function $F$ on
+some interval $[0,\Bar{\epsilon}]$, and continuously differentiable density $f$. Assume $v$ is
+high enough that all consumers buy in equilibrium. All draws are independent from each other,
+$\epsilon_{ij}$ can be interpreted as the match value between product $i$ and consumer $j$.
+Assume all firms have constant marginal cost equal to $c$.
+
+Firstly, suppose both firms charge same price $p^*$. This will happen in equilibrium since the
+game is symmetric. Then a consumer buys from $A$ whenever $\epsilon_A>\epsilon_B$ and from $B$
+otherwise. To find the equilibrium we need to analyze what happens if firm $A$ defects from a
+candidate equilibrium $p^*$ by setting some different price. Without loss of generality assume $A$
+defects to some $p_A>p^*$. Denote $\Delta\equiv p_A-p^*$. Now, a consumer buys from firm $A$ if
+$\epsilon_A-\Delta>\epsilon_B$. Assume for simplicity the $\epsilon$ are drawn from uniform
+distribution on $[0,1]$. Then, the total sales of firm $A$ from charging price
+$p_A=p^*+\Delta$ equal $q_A=\frac{1}{2}(1-\Delta)^2$. Hence the expected profits of firm $A$ are
+\begin{align}
+	\pi_A=(p_A-c)q_A
+\end{align}
+Profit maximization requires:
+\begin{align}
+	\frac{\partial\pi_A}{\partial p_A} & =(p_A-c)\frac{\partial q_A}{\partial p_A}+q_A=0,
+	\text{ with }\label{eq:FOC_perloff_salop}                                             \\
+	\frac{\partial q_A}{\partial p_A}  & =-(1-\Delta)
+\end{align}
+Then if we take first order condition and impose symmetry, $\Delta=0$ and $q_A=\frac{1}{2}$, we get:
+\begin{align}
+	(p_A-c)(-1)+\frac{1}{2} & =0             \\
+	\Longleftrightarrow p^* & =c+\frac{1}{2}
+\end{align}
+
+In the model description the assumption that $v$ is high enough s.t. each consumer will buy in
+equilibrium was made. We thus need that a consumer with $(\epsilon_A,\epsilon_B)=(0,0)$ would still
+be willing to buy. In this case, with $p^*=c+\frac{1}{2}$ this implies $v>c+ \frac{1}{2}$
+
+We can generalize the model for any distribution function $F$. Then:
+\begin{align}
+	q_A & = \int_\Delta^1\left(\int_0^{\epsilon_A-\Delta}f(\epsilon_B)\d\epsilon_B\right)f(\epsilon_A)\d\epsilon_A \\
+	    & = \int_\Delta^1F(\epsilon_A-\Delta)f(\epsilon_A)\d\epsilon_A
+\end{align}
+Using Leibnitz' rule, this implies:
+\begin{align}
+	\frac{\partial q_A}{\partial p_A}=-\int_\Delta^1f(\epsilon_A-\Delta)f(\epsilon_A)\d\epsilon_A
+	\label{eq:pa_leibnitz}
+\end{align}
+Again we can find the equilibrium price by taking first-order condition (\ref{eq:FOC_perloff_salop})
+and using (\ref{eq:pa_leibnitz}). In equilibrium $\Delta=0$ and $q_A= \frac{1}{2}$. This yields:
+\begin{align}
+	p^*=c+\frac{1}{2\int_0^1f^2(\epsilon)\d\epsilon}
+\end{align}
+Note that the Perloff-Salop model is similar in spirit to the Hotelling model, in the
+sense that each consumer has a certain valuation for each firm’s product. The crucial
+difference is that in the Hotelling model, these valuations are perfectly negatively cor-
+related: a consumer that has a very high valuation for product A, say, necessarily has
+a very low valuation for product B, and vice-versa. In the Perloff-Salop model, these
+valuations are independent of each other. A consumer with a high valuation for product
+A may very well have a high valuation for product B as well. This also implies that the
+Perloff-Salop model can easily be generalized to more than 2 firms.

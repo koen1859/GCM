@@ -1,0 +1,37 @@
+\subsection{Game Theory}
+\subsubsection{Nash Equilibrium}
+Each player is choosing the best possible strategy given the strategies chosen by the other players.
+\begin{align}
+	s^*_i\in \underset{s_i}{\argmax}\,U_i(s^*_1,\cdots,s^*_i,\cdots,s_n^*),\forall i=1,\cdots n.
+\end{align}
+There is $\in$ instead of $=$ since this Nash Equilibrium does not need to be unique.
+\subsubsection{Reaction functions}
+A reaction function (or best reply or best response function) gives the best action for a player
+given the actions of the other players. The Nash Equilibrium is where all reaction functions intersect.
+\subsubsection{Symmetry}
+When the game is symmetric, i.e. all players are in the same conditions, have the same reaction function
+etcetera, then the players are anonymous (They are indistinguishable from each other except for
+name or index). Then all players choose the same strategy $s^*$ in the Nash Equilibrium.
+\subsubsection{Sub-game perfect equilibrium}
+When players do not move simultaneously, i.e. the players move sequentially, we need to refine
+definition of Nash Equilibrium: the sub-game perfect equilibrium requires that the strategy profile
+under consideration is not only the equilibrium for the entire game but also for each sub-game.
+\subsubsection{Moves of nature}
+Many models in IO involve uncertainty. This is often modeled as a “move of nature” in a
+multistage game. The moment at which the uncertainty is resolved, is referred to as the
+move of nature. Such games can again be solved using backward induction
+*** Candidate equilibrium
+For ease of exposition, we will often use the concept of a candidate equilibrium. In many
+models, it is possible to make an educated guess as to what the equilibrium might be. We
+will refer to such an educated guess as a candidate equilibrium. A candidate equilibrium thus is a
+strategy profile that may be a (subgame perfect) Nash equilibrium, but for
+which we still have to check whether that really is the case. This approach for finding
+an equilibrium is often easier than deriving an equilibrium from scratch. Note however
+that if it turns out that the candidate equilibrium is a true equilibrium, we still have not
+established whether that equilibrium is unique.
+*** Mixed strategies
+Players are not restricted to always play some action $a_i^*$ in equilibrium. A mixed strategy
+equilibrium has each player drawing its action from some probability distribution $F_i(a_i)$,
+defined on some domain $A_i$. Given the strategies played by all other players, each player $i$
+is indifferent between the actions among which it mixes. Hence, $\E{U_i(a_i)}$ is constant
+for all $a_i\in A_i$.

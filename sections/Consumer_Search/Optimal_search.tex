@@ -1,0 +1,56 @@
+\subsection{Optimal search}
+Suppose firms sell homogeneous products and prices at each firm are drawn
+from a cumulative distribution $F(p)$, with a different draw for each
+firm. There are $n$ firms, and the consumer has unit demand. A consumer
+incurs search costs $s$ per firm it visits.
+
+We focus on \textit{sequential search}: after each firm a consumer visits,
+he can decide whether to continue search. With \textit{sequential search}
+the consumer has to decide beforehand how many firms to visit. With
+\textit{perfect recall} a consumer can decide at some point in the process
+that he wants to go back to a firm he visited before, he can do so for free.
+
+Consider $n=2$. Our consumer has visited 1 firm, denote as firm 1. At that
+firm, price $p_1$ is observer. Suppose firm 2 is visited. If a price
+$p_2>p_1$ is observed, the consumer returns to firm 1 and buys there.
+If $p_2<p_1$ the consumer buys from firm 2 and his utility would increase by
+$p_1-p_2$. Hence, the benefit from visiting the second firm is given by:
+\begin{align}
+	b(p_1)=\int_0^{p_1}(p_1-p_2)\d F(p_2)
+\end{align}
+The expected cost of visiting firm 2 is $s$. Hence the consumer is willing
+to visit the last firm whenever $p_1>\hat{p}$, where $\hat p$ implicitly
+defined by:
+\begin{align}
+	b(\hat p)=s
+\end{align}
+For existence of $\hat p$, note that:
+\begin{align}
+	b(\overline p) & =\int_0^{\overline p}(\overline p-p_2)\d F(p) \\
+	               & = \overline p -\E{p},\text{ and }b(0)=0
+\end{align}
+$b(p)$ is strictly increasing in $p$. These observations imply that $\hat p$
+always exists and is unique, provided that $s<\overline p-\E{p}$.
+
+Now suppose $n=3$. At the first firm again, $p_1$ is observed. Denote
+$B_1(p)$ as the expected net profit of doing one more search when the
+current best price is $p$, and there is just one firm left to search.
+Hence, $B_1(p)\equiv b(p)-s$. By construction $B_1(\hat p)=0$. Denote
+$B_2(p)$ as the expected net benefit of doing another search when the
+current best price is $p$ and there are two firms left to search.
+
+We can use backward induction to evaluate $B_2(\hat p)$. Suppose that our
+consumer is at the first of three shops, observer $p_1=\hat p$ and
+considers whether it is worthwhile to to also visit shop 2. First suppose
+$p_2<\hat p$. In that case the best price after visiting is $p_2$. As
+$B_1(p_2)\leq B_1(\hat p)=0$ it will not be worthwhile to visit firm 3.
+Now suppose $p_2\geq\hat p$. In that case the best price is still
+$p_1=\hat p$. It will also not be worthwhile to visit firm 3 as by
+construction $B_1(\hat p)=0$. In other words $B_2(p)=0$, so the
+consumer will use the same reservation value regardless of whether there
+are 1 or 2 firms left to search. By induction this also holds for
+$3,4,\cdots$ firms left to search. Hence, \textit{the reservation price a
+	consumer uses is independent of the number of firms she has left to
+	search}. This implies to derive the optimal search rule, it is
+not even necessary for the consumer to know how many firms there are left
+to search.
