@@ -1,57 +1,82 @@
 \subsection{Exercises}
 \begin{enumerate}
-	\item Consider the following Cournot model. Two firms set quantities. Demand is given by
-	      $q=1-p$. Marginal costs are either equal to 0 or 0.4, both with equal probability.
-	      Derive the Cournot equilibrium if
-	      \begin{enumerate}
-		      \item uncertainty is resolved before firms set their quantities.
-		      \item uncertainty is resolved after firms set their quantities.
-	      \end{enumerate}
+  \item Consider the following Cournot model. Two firms set quantities. Demand is given by
+	$q=1-p$. Marginal costs are either equal to 0 or 0.4, both with equal probability.
+	Derive the Cournot equilibrium if
+	\begin{enumerate}
+	  \item uncertainty is resolved before firms set their quantities.
+	  \item uncertainty is resolved after firms set their quantities.
+	\end{enumerate}
 
-	      Solution:
-	      \begin{enumerate}
-		      \item The game is symmetric, hence in equilibrium both firms set the same
-			    price.
-			    \begin{align*}
-				    \pi_i=(1-q_1-q_2-c)q_i\Longrightarrow\frac{\partial\pi_i}{\partial q_i} & =1-q_j-2q_i-c      \\
-				    \overset{\text{FOC}}{\Longrightarrow} q_i                             & =\frac{1-q_j-c}{2}\\
-				    \text{Imposing symmetry: }&q=\frac{1-c}{3}
-			    \end{align*}
-			    Then $c=0$ gives $q=\frac{1}{3}$, $c=0.4$ gives $q=\frac{1}{5}$.
-		      \item The expected marginal cost is $\E{c}=0.2$. We can fill this in in 
-			    the previous formula:
-			    \begin{align*}
-				    q=\frac{1-\E{c}}{3}=\frac{0.8}{3}
-			    \end{align*}
-	      \end{enumerate}
-	\item Consider a Hotelling model. Consumers are uniformly distributed on a line of unit
-	      length. Consumers either buy one unit of the good or none at all. Each consumer
-	      obtains gross utility $v$ from consuming the product. We have two firms: one is
-	      located at 0, the other is located at 1. Marginal costs for both firms are constant
-	      and equal to $c$. However, transportation costs are constant: a consumer that has
-	      to travel a distance $x$ incurs transport costs $tx^2$. Derive the equilibrium prices.
+	Solution:
+	\begin{enumerate}
+		\item The game is symmetric, hence in equilibrium both firms set the same
+		      price.
+		      \begin{align*}
+			\pi_i=(1-q_1-q_2-c)q_i\Longrightarrow\frac{\partial\pi_i}{\partial q_i} & =1-q_j-2q_i-c      \\
+			\overset{\text{FOC}}{\Longrightarrow} q_i                             & =\frac{1-q_j-c}{2}\\
+			\text{Imposing symmetry: }&q=\frac{1-c}{3}
+		      \end{align*}
+		      Then $c=0$ gives $q=\frac{1}{3}$, $c=0.4$ gives $q=\frac{1}{5}$.
+		\item The expected marginal cost is $\E{c}=0.2$. We can fill this in
+		      the previous formula:
+		      \begin{align*}
+			q=\frac{1-\E{c}}{3}=\frac{0.8}{3}
+		      \end{align*}
+	\end{enumerate}
+  \item Consider a Hotelling model. Consumers are uniformly distributed on a line of unit
+	length. Consumers either buy one unit of the good or none at all. Each consumer
+	obtains gross utility $v$ from consuming the product. We have two firms: one is
+	located at 0, the other is located at 1. Marginal costs for both firms are constant
+	and equal to $c$. However, transportation costs are constant: a consumer that has
+	to travel a distance $x$ incurs transport costs $tx^2$. Derive the equilibrium prices.
 
-	      Solution: This game is symmetric hence in equilibrium both firms set the same price.
-	      Consider the indifferent consumer with location $z$, then:
-	      \begin{align*}
-		      v-P_0-tz^2                   & =v-P_1-t(1-z)^2                 \\
-		      \Longleftrightarrow P_0+tz^2 & =P_1+t(1-z)^2                   \\
-		      \Longrightarrow z            & =\frac{1}{2}+\frac{P_1-P_0}{2t}
-	      \end{align*}
-	      Firm 0 its expected profits are:
-	      \begin{align*}
-		      \pi_0                                             & =(P_0-c)z=(P_0-c)\frac{1}{2}+\frac{P_1-P_0}{2t} \\
-		      \Longrightarrow\frac{\partial\pi_0}{\partial P_0} & =\frac{p_1-p_0+t}{2t}-\frac{p_0-c}{2t}          \\
-		      \overset{\text{FOC}}{\Longrightarrow}P_0          & =\frac{1}{2}(P_1+c+t)
-	      \end{align*}
-	      Imposing symmetry:
-	      \begin{align*}
-		      P=\frac{1}{2}(P+c+t)\Longleftrightarrow P=c+t
-	      \end{align*}
-	\item Consider the Perloff-Salop model where consumers have a valuation that is uniformly
-	      distributed on $[0, 1]$. For simplicity, $c = 0$. Assume however that $v = 0$ such
-	      that not all consumers buy in equilibrium. Derive the equilibrium prices.
+	Solution: This game is symmetric hence in equilibrium both firms set the same price.
+	Consider the indifferent consumer with location $z$, then:
+	\begin{align*}
+	  v-P_0-tz^2                   & =v-P_1-t(1-z)^2                 \\
+	  \Longleftrightarrow P_0+tz^2 & =P_1+t(1-z)^2                   \\
+	  \Longrightarrow z            & =\frac{1}{2}+\frac{P_1-P_0}{2t}
+	\end{align*}
+	Firm 0 its expected profits are:
+	\begin{align*}
+	  \pi_0                                             & =(P_0-c)z=(P_0-c)\frac{1}{2}+\frac{P_1-P_0}{2t} \\
+	  \Longrightarrow\frac{\partial\pi_0}{\partial P_0} & =\frac{p_1-p_0+t}{2t}-\frac{p_0-c}{2t}          \\
+	  \overset{\text{FOC}}{\Longrightarrow}P_0          & =\frac{1}{2}(P_1+c+t)
+	\end{align*}
+	Imposing symmetry:
+	\begin{align*}
+	  P=\frac{1}{2}(P+c+t)\Longleftrightarrow P=c+t
+	\end{align*}
+  \item Consider the Perloff-Salop model where consumers have a valuation that is uniformly
+	distributed on $[0, 1]$. For simplicity, $c = 0$. Assume however that $v = 0$ such
+	that not all consumers buy in equilibrium. Derive the equilibrium prices.
 
-	      Solution: 
-	  \end{enumerate}
-
+	Solution: In equilibrium, prices of both firms are equal to $p$. A consumer buys if $\max\{\epsilon_A,\epsilon_B\}>p$.
+	This happens with probability:
+	\begin{align*}
+	  \P{\max\{\epsilon_A,\epsilon_B\}>p}&=1-\P{\max{\epsilon_A,\epsilon_B}\leq p}\\
+					     &=1-\P{\epsilon_A\leq p}\P{\epsilon_B\leq p}\\
+					     &=1-p^2
+	\end{align*}
+	Hence both firms face demand $q=\frac{1-p^2}{2}$.\\
+	Suppose firm $A$ sets the price slightly higher than firm $B$, $p_A=p+\Delta$. Then, demand is:
+	\begin{align*}
+	  q_A=\frac{1}{2}(1-\Delta)^2-\frac{1}{2}p^2
+	\end{align*}
+	with profits:
+	\begin{align*}
+	  \pi_A=(p_A-c)q_A
+	\end{align*}
+	FOC gives:
+	\begin{align*}
+	  \pi_A=p_A\pder{q_A}{p_A}+q_A&=0\\
+	  \text{with }\pder{q_A}{p_A} &=-(1-\Delta)\\
+	  \Longleftrightarrow q_A     &=(1-\Delta)p_A
+	\end{align*}
+	Imposing symmetry:
+	\begin{align*}
+	  p&=\frac{1}{2}-\frac{p^2}{2}\\
+	  p&=\sqrt{2}-1
+	\end{align*}
+\end{enumerate}
