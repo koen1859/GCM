@@ -19,6 +19,9 @@
 \setlength{\parindent}{0pt}     % No paragraph indentation
 \setlength{\parskip}{1em}       % Add vertical space between paragraphs
 
+\newcommand{\br}[1]{\left(#1\right)}
+\newcommand{\sbr}[1]{\left[#1\right]}
+\newcommand{\cbr}[1]{\left\{#1\right\}}
 \newcommand{\pder}[2]{\frac{\partial #1}{\partial #2}}
 \newcommand{\der}[2]{\frac{\d #1}{\d #2}}
 \newcommand{\ehat}{\hat\epsilon}
@@ -43,7 +46,7 @@
 \renewcommand{\d}[1]{\,\textrm{d}#1}
 \renewcommand{\P}[1]{\,\mathbb{P}\left\{#1\right\}}
 \newcommand{\fat}[1]{\ThisStyle{\hstretch{1.2}{\ooalign{%
-  \kern.46pt$\SavedStyle#1$\cr\kern.33pt$\SavedStyle#1$\cr%
-  \kern.2pt$\SavedStyle#1$\cr$\SavedStyle#1$}}}}
+				\kern.46pt$\SavedStyle#1$\cr\kern.33pt$\SavedStyle#1$\cr%
+				\kern.2pt$\SavedStyle#1$\cr$\SavedStyle#1$}}}}
 \renewcommand{\ln}[1]{\,\mathrm{ln}\left[#1\right]}
 \newcommand*{\B}[1]{\ifmmode\bm{#1}\else\textbf{#1}\fi}

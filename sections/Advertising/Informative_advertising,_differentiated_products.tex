@@ -1,0 +1,70 @@
+\subsection{Informative advertising, differentiated products}
+Consumers are uniformly distributed on a line of unit length. Each has unit demand and is willing to pay at most $R$, but also faces
+transportation costs $t$ per unit of distance. Two firms are located at 0 and 1. Ads are sent randomly. The cost of reaching a fraction
+of $\Phi_i$ is denoted by $A(\Phi_i)$. Suppose that $A(\Phi_i)=\frac{a(\Phi_i)^2}{2}$, with $a>\frac{t}{2}$.
+
+There are three kinds of customers. Suppose that firms 1 and 2 inform fractions $\Phi_1$ and $\Phi_2$ of consumers. A fraction
+$(1-\Phi_1)(1-\Phi_2)$ is uninformed. A fraction $\Phi_1(1-\Phi_2)$ is captive on firm 1 (and similarly for firm 2). A fraction
+$\Phi_1\Phi_2$ is selective. Suppose that the market is always covered, in the sense that a customer who has received at least 1 ad will
+always buy. Also assume that the number of selective consumers is sufficiently large that firms are willing to compete for them.
+This is true if advertising is not too costly. Firm 1's demand function is:
+\begin{align}
+	D_1(P_1,P_2,\Phi_1,\Phi_2)=\Phi_1\sbr{(1-\Phi_2)+\Phi_2\frac{(P_2-P_1+t)}{2t}}.
+\end{align}
+Consider a game in which firms simultaneously choose price and advertising levels. Profits of firm 1 equal:
+\begin{align}
+	\pi_1 & =(P_1-c)D_1-A(\Phi_1)                                                              \\
+	      & =(P_1-c)\Phi_1\sbr{(1-\Phi_2)+\Phi_2\frac{(P_2-P_1+t)}{2t}}-\frac{a(\Phi_1)^2}{2}.
+\end{align}
+Taking first order condition wrt. $P_1$:
+\begin{align}
+	\pder{\pi_1}{P_1}=\Phi_1\sbr{(1-\Phi_1)+\Phi_2\frac{P_2-2P_1+c+t}{2t}}=0.
+\end{align}
+This gives the reaction fuction:
+\begin{align}
+	P_1=\frac{P_2+t+c}{2}+\frac{1-\Phi_2}{\Phi_2}t.
+	\label{eq:ch3foc1}
+\end{align}
+Now taking first order condition wrt. to $\Phi_1$:
+\begin{align}
+	a\Phi_1=(P_1-c)\sbr{(1-\Phi_2)+\Phi_2\frac{P_2-P_1+t}{2t}}.
+	\label{eq:ch3foc2}
+\end{align}
+We can impose symmetry and solve (\ref{eq:ch3foc1}) and (\ref{eq:ch3foc2}) simultaneously. From (\ref{eq:ch3foc1}):
+\begin{align}
+	p^*=c+t\frac{2-\Phi^*}{\Phi^*}.
+\end{align}
+From (\ref{eq:ch3foc2}):
+\begin{align}
+	a\Phi & =t\frac{2-\Phi}{\Phi}\br{(1-\Phi)+\frac{\Phi}{2}}     \\
+	      & \Longleftrightarrow  a\Phi^2=\br{1-\frac{1}{2}\Phi}^2 \\
+	      & \Longrightarrow \sqrt{a}\Phi=\br{1-\frac{1}{2}\Phi}.
+\end{align}
+Hence:
+\begin{align}
+	\Phi^*         & =\frac{2}{1+\sqrt{2a/t}}, \\
+	\text{and }P^* & =c+\sqrt{2at}.
+\end{align}
+Equilibrium profits are:
+\begin{align}
+	\Pi^*=\frac{2a}{\br{1+\sqrt{2a/t}}^2}.
+\end{align}
+The equilibrium price is higher than in the case without advertising.
+The equilibrium advertising level is higher when advertising is less costly, and when
+products are more differentiated (that is, when t is higher). Most surprisingly, equilibrium
+profits are increasing in the cost of advertising. When $a$ increases, this implies an increase
+in costs, but will also lower the equilibrium level of advertising. In this model, the net
+effect is positive.
+
+From a welfare point of view, prices are just transfers from consumers to firms. Consumers that are informed about the existence of both firms will
+face transportation costs $\frac{t}{4}$ on average. Those that only know the existence of one firm face transportation costs $\frac{t}{2}$
+on average. Hence, social welfare is given by:
+\begin{align}
+	\text{SW}(\Phi)=\Phi^2(v-c-t/4)+2\Phi(1-\Phi)(v-c-t/2)-a\Phi^2.
+\end{align}
+Maximizing wrt. to $\Phi$ yields:
+\begin{align}
+	\Phi^S=\frac{2(v-c)-t}{2(v-c)+2a-3t/2}.
+\end{align}
+This implies that the market equilibrium can either have too much or too little advertising,
+depending on the exact parameters of the model.
