@@ -1,0 +1,61 @@
+\subsection{The Butters Model}
+\subsubsection{Setup}
+Firms produce a homogeneous product at unit cost $c$. There is free entry of firms and there are $N$ consumers that can only learn a
+firm's existence and price by receiving an ad from that firm. Each firm decides how many ads to send, and which price to put in those ads.
+Ads are randomly distributed among customers at a cost of $k$ per ad. Consumers have unit demand and are willing to pay at most $R$.
+We assume that $R>c+k$. We are interested in the equilibrium in terms of prices and advertising levels, and whether the market provides
+too much or too little advertising from a welfare perspective.
+\subsubsection{Analysis}
+Suppose that $A$ ads are sent. There will be three kinds of consumers. Some customers receive no ads (uninformed). Some consumers only
+receive ads from 1 firm (captive) and some consumers receive ads from both firms (selective). These customers buy from the lowest price.
+
+Let $\Phi$ denote the probability that a consumer receives at least 1 ad. The probability that a consumer is uninformed equals
+$1-\Phi=\br{1-\frac{1}{N}}^A$. If $N$ is large enough, this is approximately $e^{\frac{A}{N}}$. Thus, if a proportion of $\Phi$ consumers
+are to receive at least 1 ad. Then the number of ads that has to be sent equals:
+\begin{align}
+	A(\Phi)=N\ln{\frac{1}{1-\Phi}}.
+	\label{eq:ch3Cost}
+\end{align}
+
+A pure strategy equilibrium in prices does not exist. If all other firms charge some price $p\in(k+c,R]$, then this firm has incentive
+to slightly undercut. If all other firms charge $p=k+c$ however, then this firm has incentive to charge price $p=R$ and sell to its captive
+consumers. The equilibrium has firms mixing on $\sbr{k+c,R}$. For any price below $k+c$ a firm would be better off not sending ads.
+
+There is free entry of firms, implying that equilibrium profits are zero. Denote by $x(P)$ the probability that an ad with price $P$ will
+be accepted by the customer receiving it. Then $x(P)$ is the probability that a consumer does not receive an ad with a lower price. This
+is decreasing in $P$. Equilibrium requires that for each $P\in[k+c,R]$, we have:
+\begin{align}
+	(P-c)x(P)-k=0.
+\end{align}
+This implies that $x(c+k)=1$ and $x(R)=\frac{k}{R-c}$. In equilibrium we also need that a consumer will accept price $R$ exactly equals the
+probability that he does not receive any other ad, so $x(R)=1-\Phi$. Equilibrium thus requires:
+\begin{align}
+	\Phi^*=\frac{1-k}{R-c}.
+\end{align}
+\subsubsection{Social optimum}
+Now consider the amount of advertising that a social planner would choose. Prices are just transfers between consumers and firms, so they will
+not affect total welfare. When one additional consumer that was initially uninformed learns about the existence of some firm, the social
+benefit is $R-c$. Thus, social benefits are $N\Phi(R-c)$. However, there is a cost of reaching these consumers, which is given by (\ref{eq:ch3Cost}).
+The social planner thus maximizes:
+\begin{align}
+	\underset{\Phi}{\max}\cbr{\Phi N(R-c)-kN\ln{\frac{1}{1-\Phi}} }.
+\end{align}
+Taking FOC:
+\begin{align}
+	N(R-c)-\frac{kN}{1-\Phi}=0.
+\end{align}
+Solving for $\Phi$ yields:
+\begin{align}
+	\Phi^S=\frac{1-k}{R-c}.
+\end{align}
+This implies that $\Phi^S=\Phi^*$. Thus, the market provides the socially optimal level of advertising.
+
+This can be understood as follows. Consider the private benefit to a firm of sending
+an ad at the price R. This benefit equals $(R-c)$ times the probability that the consumer
+receives no other ad. But this is also the social benefit of sending an ad, since the ad
+increases social surplus by $R-c$ but only if no other ads are received by the consumer.
+Thus, the highest-priced firm appropriates all consumer surplus and steals no business
+from rivals. Therefore, it advertises at the socially optimal rate. Now consider an ad at
+a price lower than $R$. The private benefits to a firm of sending such an ad are equal to
+those of sending an ad at price $P = R$, as expected profits are always zero. This implies
+that social benefits also equal private benefits at any price below $R$.

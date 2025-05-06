@@ -17,8 +17,50 @@
 	      \end{enumerate}
 
 	      Solution:
-	\item Consider a model of search with differentiated products as analyzed in this chap-
-	      ter. There are two firms that each have zero costs. Match values are uniformly
+	      \begin{enumerate}
+		      \item Setting $p=2$ is always more profitable than setting price $p>2$ for either firm, regardless of the choice
+		            of the other firm. Since even if $p_2=0$ (i.e. all informed customers go to firm 2) then still $p_1=2$ gives
+		            profit $\pi_1=2(1-\lambda)$ while $p_1=3$ gives profits $\pi_1=\frac{3(1-\lambda)}{2}$, which is clearly smaller.
+		            This difference increases even further if $p_2\geq2$.\\
+		            Suppose that $p_2=2$. Then there are 3 choices for firm 1:
+		            \begin{itemize}
+			            \item $p_1=2\Longrightarrow q_1=1\Longrightarrow \pi_1=2 $
+			            \item $p_1=p_2-\epsilon$ with $\epsilon$ arbitrarily small. This gives demand
+			                  $q_1=2\lambda+(1-\lambda)=1+\lambda\Longrightarrow\pi_1=2(1+\lambda ) $
+		            \end{itemize}
+		            It is clear that the third choice is the best option.\\
+		            Suppose $p_2<2$. Then there are 2 choices for firm 1:
+		            \begin{itemize}
+			            \item $p_1=2\Longrightarrow q_1=1-\lambda\Longrightarrow\pi_1=2(1-\lambda)$
+			            \item $p_1=p_2-\epsilon$ with $\epsilon$ arbitrarily small. This gives demand
+			                  $q_1=2\lambda+(1-\lambda)=1+\lambda\Longrightarrow\pi_1=p_2(1+\lambda)$
+		            \end{itemize}
+		            The first option is optimal if
+		            $p_2(1+\lambda)\leq2(1-\lambda)\Longleftrightarrow p_2\leq\frac{2(1-\lambda)}{1+\lambda} $. This yields the
+		            best-reply function:
+		            \begin{align*}
+			            p_1=\begin{cases}
+				                2            & \text{if }p_2\leq\frac{2(1-\lambda)}{1+\lambda} \\
+				                p_2-\epsilon & \text{otherwise}
+			                \end{cases}
+		            \end{align*}
+		      \item There is no equilibrium in pure strategies, we need to look for a mixed-strategy equilibrium on the interval
+		            $[\underline{p},\overline{p}]$, where we now from the previous part that $\overline{p}=2$.\\
+		            If a firm sets $p=2$ its price is the highest for sure. This gives profits $2(1-\lambda )$.
+		            A firm that sets price $p$ will sell $1+\lambda$ if this price is the lowest. Otherwise, it will only
+		            sell $1-\lambda$. Then the expected profits are:
+		            \begin{align*}
+			            F(p)(1-\lambda)p+(1-F(p))(1+\lambda)p=p+p\lambda(1-2F(p))
+		            \end{align*}
+		            For a mixed strategy equilibrium, this expected profit needs to equal the profit of $p=2$. Hence:
+		            \begin{align*}
+			            F(p)=\frac{p-2+\lambda(p+2)}{2p\lambda}
+		            \end{align*}
+		            We can find lower bound $\underline{p}$ by solving $F(p)=0$.
+		            Hence, $\underline p = \frac{2(1-\lambda)}{1+\lambda}$.
+	      \end{enumerate}
+	\item Consider a model of search with differentiated products as analyzed in this chapter.
+	      There are two firms that each have zero costs. Match values are uniformly
 	      distributed on $[0, 1]$. A share $\lambda$ of consumers have search costs $s = 0.25$. The other
 	      $1-\lambda$ have search costs $s=0.16$. Derive the equilibrium in prices.
 
