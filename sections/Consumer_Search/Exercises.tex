@@ -64,7 +64,40 @@
 	      distributed on $[0, 1]$. A share $\lambda$ of consumers have search costs $s = 0.25$. The other
 	      $1-\lambda$ have search costs $s=0.16$. Derive the equilibrium in prices.
 
-	      Solution:
+	      Solution: Suppose both firms charge price $p$. Let's refer to
+	      the low search cost consumers with $L$ and to the
+	      high search cost consumers with $H$. We have
+	      $\hat\epsilon=1-\sqrt{2s}$, so
+	      $\hat\epsilon_L=1-0.4\sqrt{2}$ and
+	      $\hat\epsilon_H=1-0.5\sqrt{2}$. Suppose firm $A$ defects to price
+	      $p_A=p-\Delta$. Let
+	      $\hat\epsilon_A=\lambda\hat\epsilon_H+(1-\lambda)\hat\epsilon_L$.
+	      Then (As per the result in ch. 2.6.1):
+	      \begin{align*}
+		      q_A & = \frac{1}{2}+\frac{1}{2}\Delta(1+\hat\epsilon_A-\Delta)                          \\
+		          & = \frac{1}{2}(p-p_A)(1+\hat\epsilon_A-p+p_A)                                      \\
+		          & = \frac{1}{2}+\frac{1}{2}\br{p(1+\hat\epsilon_A-p)+p_A(2p-1-\hat\epsilon_A-p_A)}.
+	      \end{align*}
+	      Profits are $\pi_A=p_Aq_A$, hence the FOC is:
+	      \begin{align*}
+		      \pder{q_A}{p_A}+q_A=0
+	      \end{align*}
+	      We know:
+	      \begin{align*}
+		      \pder{q_A}{p_A}        & = p-p_A-\frac{1}{2}(1+\hat\epsilon_A) \\
+		      (\text{with symmetry}) & = -\frac{1}{2}(1+\hat\epsilon_A).
+	      \end{align*}
+	      With symmetry, $q_A=\frac{1}{2}$. Then fill in into the FOC:
+	      \begin{align*}
+		      -\frac{1}{2}(1+\hat\epsilon_A)p^*+\frac{1}{2} & =0                           \\
+		      \Longrightarrow p^*                           & =\frac{1}{1+\hat\epsilon_A}.
+	      \end{align*}
+	      $\hat\epsilon_A=\lambda\hat\epsilon_H+(1-\lambda)\hat\epsilon_L
+		      =1-\sqrt{2}(0.4+0.1\lambda)$.
+	      So the final answer is:
+	      \begin{align*}
+		      p^*=\frac{1}{2-\sqrt{2}(0.4+0.1\lambda)}
+	      \end{align*}
 	\item In the model of search with differentiated products described in these notes, we
 	      assumed that consumers pick a firm at random to visit first. Let us now assume that
 	      that is no longer the case, and can advertise to attract consumers. More precisely,
