@@ -107,5 +107,32 @@
 	      prices and advertising levels simultaneously. Derive equilibrium profits as a function
 	      of search costs $s$.
 
-	      Solution:
+	      Solution: We now have demand for firm 1:
+	      \begin{align*}
+		      D_1=\frac{a_1}{a_1+a_2}(1-\hat\epsilon-\Delta)
+		      +\frac{a_2}{a_1+a_2}(1-\hat\epsilon-\Delta)\hat\epsilon
+		      +\frac{1}{2}\hat\epsilon^2.
+	      \end{align*}
+	      Fill in $\Delta=p_1-p^*$ and calculate the derivative:
+	      \begin{align*}
+		      \pder{D_1}{p_1}=-\frac{a_1}{a_1+a_2}-\frac{a_2}{a_1+a_2}\hat\epsilon.
+	      \end{align*}
+	      Total profits are equal to $\pi_1=p_1D_1-\frac{1}{4}a_1$. Then
+	      calculate the FOC's wrt. to $p_1$ and $a_1$:
+	      \begin{align*}
+		      \pder{\pi_1}{p_1} & =D_1+p_1\pder{D_1}{p_1},                            \\
+		      \pder{\pi_1}{a_1} & =\frac{a_2}{(a_1+a_2)^2}(1-\hat\epsilon-\Delta)p_1-
+		      \frac{a_2}{(a_1+a_2)^2}(1-\hat\epsilon-\Delta)\hat\epsilon p_1-\frac{1}{4}=0.
+	      \end{align*}
+	      Then impose symmetry:
+	      \begin{align*}
+		      \pder{\pi_1}{p_1} & =\frac{1}{2}+p^*\br{-\frac{1}{2}-\frac{1}{2}\hat\epsilon}=0, \\
+		      \pder{\pi_1}{a_1} & =\frac{1}{4a}(1-\hat\epsilon)p^*
+		      -\frac{1}{4a}(1-\hat\epsilon)\hat\epsilon p^*-\frac{1}{4}=0.
+	      \end{align*}
+	      Hence:
+	      \begin{align*}
+		p^*&=\frac{1}{1+\hat\epsilon},\\
+		a^*&=(1-\hat\epsilon)^2p^*.
+	      \end{align*}
 \end{enumerate}
