@@ -16,3 +16,71 @@ The cost of providing quality $q$  is $c(q)$. We make the following assumptions:
 	\item $c'\geq0$
 	\item $c''\geq0$
 \end{enumerate}
+
+We assume that there are two types of consumers, with taste parameters
+$\theta_1$, $\theta_2$, with $\theta_1<\theta_2$. The proportion of type-1
+consumers is $\lambda$, hence $(1-\lambda)$ type 2. The costs of providing
+a product with quality $q$ is given by $c(q)$, with $c'>0$ and $c''\geq0$.
+
+Suppose the monopolist offers two packages. One is denoted $(p_1, q_1)$, the other
+$(p_2,q_2)$. We assume the following single-crossing condition is satisfied:
+\begin{align}
+	U(\theta_2,q_2)-U(\theta_2,q_1)\geq U(\theta_1,q_2)-U(\theta_1,q_1)
+\end{align}
+A high type is always willing to pay more for any quality upgrade than a low
+type is.
+
+The monopolist maximizes its profits:
+\begin{align}
+	\underset{p_1,q_1,p_2,q_2}{\max} & \lambda(p_1-c(q_1))+(1-\lambda)(p_2-c(q_1)) \\
+	\text{s.t.}                      & \begin{cases}
+		                                   U(\theta_1,q_1)-p_1\geq
+		                                   U(\theta_1,q_2)-p_2      & \text{(IC-1)} \\
+		                                   U(\theta_2,q_2)-p_2\geq
+		                                   U(\theta_2,q_1)-p_1      & \text{(IC-2)} \\
+		                                   U(\theta_1,q_1)-p_1\geq0 & \text{(IR-1)} \\
+		                                   U(\theta_2,q_2)-p_2\geq0 & \text{(IR-2)}
+	                                   \end{cases}
+\end{align}
+(IC-1), (IC-2) require that the net utility of buying the bundle designed for
+you is at least as high as buying the other bundle. (IR-1), (IR-2) require that
+you get positive utility from buying the bundle designed for you.
+\subsubsection{Benchmark: complete information}
+Consider the case in which the monopolist knows the types of the consumers
+it faces. Hence, it does not need to worry about a type 1 choosing bundle 2
+and vice-versa, simply because a type 1 consumer only has the possibility to
+choose a type 1 bundle, and a type 2 only can choose bundle 2. This means that
+the incentive constraints do not have to be satisfied.
+
+The monopolist now designs bundle $i$ to maximize:
+\begin{align}
+	\underset{p_i,q_i}{\max}\, & p_i-c(q_i)                \\
+	\text{s.t. }               & U(\theta_i,q_i)-p_i\geq0.
+\end{align}
+In the profit-maximizing solution the constraint is binding. Otherwise the
+monopolist can increase $p_i$ to get more profit. Then the problem becomes:
+\begin{align}
+	\underset{q_i}{\max}\,U(\theta_i,q_i)-c(q_i),
+	\label{eq:ch4max}
+\end{align}
+which implies that the optimal solution is given by:
+\begin{align}
+	\pder{U(\theta_i,q_i)}{q_i} & = \der{c(q_i)}{q_i}, \\
+	p_i                         & = U(\theta_i,q_i).
+\end{align}
+The consumer is indifferent between buying the bundle and not buying, in this
+case.
+
+For a given bundle $q_i$, the monopolist always maximizes its profits by
+charging an amount that equals a consumer's willingness to pay for this bundle,
+so $p_i=U_i(\theta_i,q_i)$. Then the profit-maximizing bundle to offer to type
+$i$ consumers is the one where marginal cost equals marginal utility.
+\subsubsection{Social optimum}
+Now consider social welfare. As always, social welfare equals the firm's
+profits plus the consumer surplus. For a consumer of type $i$, this implies:
+\begin{align}
+	\text{SW}_i=(p-c(q_i))+(U(\theta_i,q_i)-p)=U(\theta_i,q_i)-c(q_i).
+\end{align}
+This is exactly (\ref{eq:ch4max}). Hence, the monopoly will maximize social
+welfare.
+\subsubsection{Solving the model with incomplete information}
