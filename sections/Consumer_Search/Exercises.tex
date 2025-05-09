@@ -4,7 +4,15 @@
 	      Suppose the number of firms is $n>2$. Derive the mixed strategy
 	      equilibrium.
 
-	      Solution:
+	      Solution: Now the profits in equilibrium are $\frac{1}{n}(1-\lambda)$. With probability $(1-F(p))^{n-1}$, firm $i$ charging price
+	      $p$ sets the lowest price. Then expected profits are:
+	      \begin{align*}
+		      \E{\pi_i(p)}=\frac{1}{n}(1-\lambda)p+(1-F(p))^{n-1}\lambda p.
+	      \end{align*}
+	      The lower bound is still $\underline{p}=\frac{1-\lambda}{1+\lambda}$, then equate expected profits with equilibrium profits:
+	      \begin{align*}
+		      F(p)=1-\br{\frac{(1-\lambda)(1-p)}{n\lambda p}}^{\frac{1}{n-1}}.
+	      \end{align*}
 	\item Consider the following variation of Varian (1980)’s model of sales.
 	      A duopoly
 	      competes in prices. Costs of production are zero. There is a mass 1 of consumers
