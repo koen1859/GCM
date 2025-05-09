@@ -41,6 +41,7 @@ The monopolist maximizes its profits:
 		                                   U(\theta_1,q_1)-p_1\geq0 & \text{(IR-1)} \\
 		                                   U(\theta_2,q_2)-p_2\geq0 & \text{(IR-2)}
 	                                   \end{cases}
+	\label{eq:ch4maxprob}
 \end{align}
 (IC-1), (IC-2) require that the net utility of buying the bundle designed for
 you is at least as high as buying the other bundle. (IR-1), (IR-2) require that
@@ -84,3 +85,110 @@ profits plus the consumer surplus. For a consumer of type $i$, this implies:
 This is exactly (\ref{eq:ch4max}). Hence, the monopoly will maximize social
 welfare.
 \subsubsection{Solving the model with incomplete information}
+We now solve (\ref{eq:ch4maxprob}) with incomplete information. We do not have the assumption that the monopolist can observe the type of a
+consumer, and can offer that consumer only one package. Now we assume that that the monopolist needs to offer both types of packages to the consumers,
+and hope that each consumer will buy the correct one.
+
+Note that we have:
+\begin{align}
+	U(\theta_2,q_2)-p_2\geq U(\theta_2,q_1)-p>U(\theta_1,q_1)-p_1.
+	\label{eq:ch4eqchain}
+\end{align}
+The first inequality is simply (IC-2), the second inequality then follows from $\theta_2 > \theta_1$. Suppose that (IR-1) is not binding. Then,
+(\ref{eq:ch4eqchain}) implies that (IR-2) is also not binding. Then, the monopolist could just increase $p_1$ and $p_2$ and increase its profits.
+Hence, at the profit-maximizing solution, we must have (IR-1) binding. By (\ref{eq:ch4eqchain}) we then have that (IR-2) is strictly satisfied.
+This means that (IR-2) can be removed from the list of restrictions, since it is implied by (IR-1).
+
+Suppose that (IC-2) is not binding. We then have:
+\begin{align}
+	U(\theta_2,q_2)-p_2>U(\theta_2,q_1)-p_1>U(\theta_1,q_1)-p_1=0.
+\end{align}
+This implies that increasing $p_2$ by some small value $\epsilon$ does not violate (IR-2). Hence this cannot be profit-maximizing. At the
+profit-maximizing solution, (IC-2) is binding.
+
+Add (IC-1) and (IC-2) to find:
+\begin{align}
+	U(\theta_2,q_2)-U(\theta_2,q_1)\geq U(\theta_1,q_2)-U(\theta_1,q_1).
+\end{align}
+This is exactly the single-crossing solution, provided that $q_2\geq q_1$. Hence, at the profit-maximizing solution, $q_2\geq q_1$. The fact that
+(IC-2) is binding implies:
+\begin{align}
+	p_2-p_1=U(\theta_2,q_2)-U(\theta_2,q_1)>U(\theta_1,q_2)-U(\theta_1,q_1),
+\end{align}
+using $\theta_2>\theta_1$, $q_2\geq q_1$ and the single crossing condition. This implies:
+\begin{align}
+	U(\theta_1,q_2)-p_2<U(\theta_1,q_1)-p_1.
+\end{align}
+Hence, if (IC-2) is binding, (IC-1) is strictly satisfied. This means we can delete (IC-1) from the list of restrictions. We can write the
+monopolist's problem as:
+\begin{align}
+	\underset{q_1,q_2}{\max}\, & \lambda(p_1-c(q_1))+(1-\lambda)(p_2-c(q_2)) \\
+	\text{s.t. }               & \begin{cases}
+		                             p_2=U(\theta_2,q_2)-U(\theta_2,q_1)+p_1 \\
+		                             p_1=U(\theta_1,q_1)
+	                             \end{cases}
+\end{align}
+or
+\begin{align}
+	\underset{q_1,q_2}{\max}\,\Pi(q_1,q_2) & =\lambda(U(\theta_1,q_1)-c(q_1))                                      \\
+	                                       & +(1-\lambda)(U(\theta_2,q_2)-U(\theta_2,q_1)+U(\theta_1,q_1)-c(q_2)).
+\end{align}
+FOC:
+\begin{align}
+	\pder{\Pi}{q_1}                            & =\pder{U}{q_1}(\theta_1,q_1)-(1-\lambda)\pder{U}{q_1}(\theta_2,q_1)-\lambda\pder{c}{q_1}(q_1)=0, \\
+	\pder{\Pi}{q_2}                            & =(1-\lambda)\br{\pder{U}{q_2}(\theta_2,q_2)-\pder{c}{q_2}(q_2)}=0                                \\
+	\Longrightarrow\pder{U}{q_1}(\theta_1,q_1) & =\lambda\pder{c}{q_1}(q_1)+(1-\lambda)\pder{U}{q_1}(\theta_2,q_1),                               \\
+	\pder{U}{q_2}(\theta_2,q_2)                & =\pder{c}{q_2}(q_2).
+\end{align}
+Note that $q_2>q_1$. Hence, as $\spder{U}{q}(\theta_2,q)<0$, we have
+$\pder{U}{\theta_2,q_1}>\pder{U}{q_2}(\theta_2,q_2)=\pder{c}{q_2}(q_2)\geq\pder{c}{q_1}(q_1)$. This implies that
+$\lambda\pder{c}{q_1}(q_1)+(1-\lambda)\pder{U}{q_1}(\theta_2,q_1)>\pder{c}{q_1}(q_1)$, so the optimal solution has
+$\pder{U}{q_1}(\theta_1,q_1)>\pder{c}{q_1}(q_1)$ (marginal cost is smaller than marginal utility).
+
+There are several things to note:
+\begin{enumerate}
+	\item Note that (4.22) implies that the type 2 consumes exactly the amount that he would
+	      also choose to consume would he face a price $c$. Hence, the type 2 consumes the
+	      amount that is socially optimal. This is a general result in these types of models:
+	      there is \textit{no distortion at the top}.
+	\item Also note from that the type 2 gets a strictly positive surplus: with
+	      $U (\theta_2, q_2) > p_2$, a type 2 pays less for package 2 than he would be willing to pay.
+	      The difference is type 2’s informational rent: if the monopolist would know his
+	      type, he would not get any surplus. Hence, the surplus is due to type 2 having
+	      private information regarding his type.
+	\item From (IR-1) binding, we have that a type 1 pays exactly the amount he is willing to pay
+	      for $q_1$ units of the product. Hence, the lowest type does not obtain any utility from
+	      consuming the good: there is no surplus at the bottom.
+	\item Under the assumption that, in equilibrium, both types are served (which was
+	      made throughout the entire analysis), we have that $\pder{U}{q_1}(\theta_1, q_1)>\pder{c}{q_1} (q_1)$. With
+	      $\spder{U}{q_1} (\theta_1, q_1) < 0$, this implies that type 1 consumes less than his socially optimal
+	      amount. In fact, from Lemma 3, we have that the package $(p_1, q_1)$ is designed such
+	      that a type 2 is exactly indifferent between consuming $(p_1, q_1)$ and $(p_2, q_2)$. This is
+	      also a general result: in a model with more types, we always have that a type is
+	      indifferent between consuming his own package and the package designed for the
+	      next-highest type. In a sense, this also holds for the lowest type: he is indifferent
+	      between consuming the package designed for him, and consuming nothing.
+	\item Note that the rhs of (4.21) is decreasing in $\lambda$, again conditional on both types being
+	      served. This implies that as $\lambda$, the fraction of types 1 in the population, increases,
+	      the package designed for type 1 moves in the direction of his socially optimal package. Also, as
+	      $\theta_2$ and $\theta_1$ move closer together, the same is true.
+	\item Finally, note that throughout the analysis we assume that the monopolist finds it
+	      profitable to offer two different packages to the two different types of consumers.
+	      We solved the model under that restriction. However, that may not always be the
+	      case. Depending on the parameters, the monopolist may find it more profitable
+	      to only offer one package. For example, if there are relative few low types, then a
+	      monopolist may find it more profitable to only offer a package aimed at the high
+	      type, and not selling anything to the low types. In that case, it can charge a higher
+	      price to the high types, but has to give up any profits it was making on the low
+	      types.
+\end{enumerate}
+If we would implement the complete information equilibrium in the incomplete information case, the incentive compatibility constraint of the
+high type would not be satisfied: he would prefer consuming bundle $q_1$ and obtain utility $U(\theta_2,q_1)-p_1>0$ rather than consuming bundle
+$q_2$ and obtain utility $U(\theta_2,q_2)-p_2=0$.
+
+In equilibrium, the monopolist decreases the price for bundle 2 and decrease $q_1$. Both actions make it less attractive for a type 2 to choose
+the bundle of a type 1. In the new optimum, the low type pays exactly what he is willing to pay, whereas the high type is indifferent between
+consuming his own bundle or that of a low type, i.e. $\pder{U}{q_2}(\theta_2,q_2)-P_2=\pder{U}{q_1}(\theta_2,q_1)-P_1$.
+\textit{What the company is trying to do is prevent
+	the passengers who can pay the second-class fare from traveling third-class; it hits the
+	poor, not because it wants to hurt them, but to frighten the rich.}
