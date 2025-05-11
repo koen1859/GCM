@@ -20,12 +20,64 @@
 
 	      Solution:
 	      \begin{enumerate}
-		      \item
-		      \item
+		      \item The number of consumers that is now informed about firm 1 is:
+		            \begin{align*}
+			            \phi_i=\Phi_1+\frac{1}{2}(1-\Phi_1)=\frac{1}{2}(1+\Phi_1).
+		            \end{align*}
+		            Then demand is:
+		            \begin{align*}
+			            D_1=\phi_1\sbr{(1-\phi_2)+\phi_2\br{\frac{1}{2}+\frac{P_2-P_1}{2t}}}
+		            \end{align*}
+		            Hence, the profit is:
+		            \begin{align*}
+			            \pi_1                          & =(P_1-c)D_1-\frac{a(\Phi_1)^2}{2}                                                                       \\
+			            \Longrightarrow\pder{p_1}{P_1} & =\phi_1\sbr{(1-\phi_2)+\phi_2\br{\frac{1}{2}+\frac{P_2-2P_1}{2t}}}=0                                    \\
+			            \Longrightarrow P_1            & =\frac{P_2+t}{2}+\frac{1-\phi_2}{\phi_2}                                                                \\
+			            \Longrightarrow a\Phi_1        & =\frac{1}{2}P_1\sbr{1-\frac{1}{2}(1+\Phi_1)+\frac{1}{2}(1+\Phi_2)\br{\frac{1}{2}+\frac{P_2-2P_1}{2t}}}.
+		            \end{align*}
+		      \item Probably: the same intuition still holds. The spillovers in advertisements (in the sense that now ads effectively will reach more
+		            people due to word of mouth) will be internalized (i.e., taken into
+		            account when setting the advertisement intensity) both by the social planner and in the decentralized equilibrium. Firms will still
+		            mix in equilibrium and an ad with the highest price will still capture all the consumer surplus and therefore still be put out at the
+		            socially optimal rate. Because of the mixed strategy equilibrium
+		            ads with other prices generate the same private benefits as the
+		            highest-priced ad and hence will also be put out at the socially
+		            optimal rate.
 	      \end{enumerate}
 	\item Solve the Grossman-Shapiro model in the case that preferences of consumers are
 	      given by the Perloff-Salop model described in the first chapter, rather than the
 	      Hotelling model. (Do not solve for the welfare optimum: that becomes too complicated.)
 
-	      Solution:
+	      Solution: In equilibrium (equal prices and ads), firm 1 sells to half the informed consumers:
+	      \begin{align*}
+		      q_1=\frac{1}{2}(1-(1-\Phi)^2)=\frac{1}{2}\Phi(2-\Phi).
+	      \end{align*}
+	      Consider when firm 1 defects in both price and advertising:
+	      \begin{align*}
+		      q_1=\Phi_1\sbr{(1-\Phi_2)+\frac{1}{2}\Phi_2(1-(p_1-p))^2}.
+	      \end{align*}
+	      Then profits are:
+	      \begin{align*}
+		      \pi_1=(p_1-c)q_1-\frac{1}{2}a\Phi_1^2.
+	      \end{align*}
+	      Take FOC:
+	      \begin{align*}
+		      \pder{\pi_1}{p_1}    & =(p_1-c)\pder{q_1}{p_1}+q_1=0                                    \\
+		      \pder{\pi_1}{\Phi_1} & =\sbr{(1-\Phi_2)+\frac{1}{2}\Phi_2(1-(p_1-p))^2}(p_1-c)-a\Phi_1,
+	      \end{align*}
+	      where:
+	      \begin{align*}
+		      \pder{q_1}{p_1}=-\Phi_1\Phi_2(1-(p_1-p)).
+	      \end{align*}
+	      Then we impose symmetry:
+	      \begin{align*}
+		      -(p-c)\Phi^2+q_1                       & =0                        \\
+		      \br{1-\Phi+\frac{1}{2}\Phi}(p-c)-a\Phi & =0                        \\
+		      \Longrightarrow                                                    \\
+		      p-c-\frac{2-\Phi}{2\Phi}               & =0                        \\
+		      \br{1-\frac{1}{2}\Phi}(p-c)-a\Phi      & =0                        \\
+		      \Longrightarrow                                                    \\
+		      p                                      & = c+\frac{2-\Phi}{2\Phi}  \\
+		      \Phi                                   & =\frac{4-8\sqrt{a}}{2-8a}
+	      \end{align*}
 \end{enumerate}
